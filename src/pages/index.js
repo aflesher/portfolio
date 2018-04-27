@@ -1,3 +1,9 @@
-import React from "react"
+import React from "react";
+import Link from "gatsby-link";
+import Header from "../components/Header.jsx";
 
-export default () => <div>Hello world!</div>
+export default () => (
+  <div>
+    <Header />
+  </div>
+);
