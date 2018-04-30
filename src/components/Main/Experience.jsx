@@ -19,9 +19,9 @@ class Experience extends React.Component {
             {this.props.date}
           </div>
         </div>
-        <p>
+        <div>
           {this.props.children}
-        </p>
+        </div>
       </div>
     );
   }

@@ -9,15 +9,10 @@ import mailLogo from "../images/mail-icon.png";
 
 class Component extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      navItem: 0
+  navItemOnClick(index) {
+    if (this.props.navItemOnClick) {
+      this.props.navItemOnClick(index);
     }
-  }
-
-  navItemClick(index) {
-    this.setState({navItem: index});
   }
 
   render() {
@@ -43,9 +38,9 @@ class Component extends React.Component {
           </div>
 
           <div className="nav-items">
-            <NavItem name="About Me" active={this.state.navItem} index="0" onClick={(e) => this.navItemClick(e)} />
-            <NavItem name="Experience" active={this.state.navItem} index="1" onClick={(e) => this.navItemClick(e)} />
-            <NavItem name="Projects" active={this.state.navItem} index="2" onClick={(e) => this.navItemClick(e)} />
+            <NavItem name="About Me" active={this.props.activeNavItem} index="0" onClick={(e) => this.navItemOnClick(e)} />
+            <NavItem name="Experience" active={this.props.activeNavItem} index="1" onClick={(e) => this.navItemOnClick(e)} />
+            <NavItem name="Projects" active={this.props.activeNavItem} index="2" onClick={(e) => this.navItemOnClick(e)}  />
           </div>
 
         </div>
