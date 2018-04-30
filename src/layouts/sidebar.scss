@@ -1,6 +1,14 @@
+.sidebar-wrapper {
+  position: absolute;
+}
+
 .sidebar {
   background-color: #3d484e;
   color: white;
+  width: $sidebar-width;
+  height: 100%;
+  position: fixed;
+  margin-left: -$sidebar-width;
 
   a {
     color: white;
@@ -57,19 +65,14 @@
     background-color: #3c5968;
     width: 100%;
     padding: 15px;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     cursor: pointer;
+    text-transform: uppercase;
   }
 
   .nav-item:hover, .nav-item.active {
     background-color: #4c7184;
     width: 105%;
   }
-
-  width: 250px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
 }

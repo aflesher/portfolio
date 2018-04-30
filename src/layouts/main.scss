@@ -1,6 +1,67 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'variables.scss';
 @import 'sidebar.scss';
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page {
+  width: $main-width;
+  margin: 0 auto;
+  position: relative;
+  padding-left: $sidebar-width;
+  font-size: 14px;
+
+  ul {
+    padding-left: 15px;
+  }
+
+  H1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .section {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .section:nth-child(2) {
+    background-color: #efefef;
+  }
+
+  .company {
+    padding-left: $company-icon-size + 10px;
+    position: relative;
+    padding-bottom: 10px;
+
+    .icon {
+
+      img {
+        width: $company-icon-size;
+        height: $company-icon-size;  
+      }
+      
+      position: absolute;
+      width: $company-icon-size;
+      height: $company-icon-size;
+      left: 0;
+      top: 0;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .location {
+      font-style: italic;
+    }
+
+    .date {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
 }
