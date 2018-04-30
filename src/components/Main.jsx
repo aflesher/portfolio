@@ -59,7 +59,6 @@ class Component extends React.Component {
               <li>General feature development and bug fixing.</li>
             </ul>
           </Experience>
-          <hr />
         </div>
 
         <div className="projects section" ref="2">
@@ -67,15 +66,16 @@ class Component extends React.Component {
             Projects
           </h1>
           <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium. Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum. In elementum id neque quis vulputate. Duis fringilla ultricies tellus a iaculis. Integer facilisis risus in quam interdum, ut malesuada nibh pulvinar. Pellentesque mollis lacinia ullamcorper. Pellentesque ultrices, sapien luctus egestas fringilla, eros nulla commodo libero, eget viverra libero tortor at ante.
+          </p>
+        </div>
+
+        <div className="projects section" ref="3">
+          <h1>
+            Resume
+          </h1>
+          <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium. Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum. In elementum id neque quis vulputate. Duis fringilla ultricies tellus a iaculis. Integer facilisis risus in quam interdum, ut malesuada nibh pulvinar. Pellentesque mollis lacinia ullamcorper. Pellentesque ultrices, sapien luctus egestas fringilla, eros nulla commodo libero, eget viverra libero tortor at ante.
-
-Phasellus pharetra dolor quis massa dictum egestas. Maecenas auctor volutpat ipsum eget mollis. Maecenas quis eros cursus risus pellentesque pellentesque et at odio. Proin id facilisis orci. Aliquam aliquet dui ante, a vehicula mauris tristique eu. Proin sed ligula eget libero vestibulum cursus non sed nisl. Nullam ac lobortis diam, eget iaculis enim.
-
-Proin a dolor ullamcorper lacus faucibus luctus. Pellentesque in tristique tortor. Etiam convallis mi in aliquet congue. Cras tincidunt hendrerit pretium. Nulla congue, mauris sit amet congue suscipit, sem erat vehicula massa, in pharetra turpis sapien laoreet risus. Aenean et scelerisque felis, commodo facilisis nunc. Suspendisse potenti. Aliquam egestas nec mauris quis consectetur. Sed pellentesque risus sit amet pharetra fringilla. Nunc molestie nisi ac nisi vehicula feugiat. Morbi malesuada lacus dictum tortor dapibus, volutpat consectetur nunc semper. Integer magna arcu, rhoncus mattis lobortis vitae, congue id tellus. Maecenas sit amet lorem nec dolor pulvinar lobortis sit amet gravida eros.
-
-Donec placerat tristique massa vel tempor. Aliquam non nunc a libero vehicula maximus non et tellus. Proin malesuada suscipit ligula vel dictum. Fusce vestibulum felis vitae dui fermentum, ac venenatis purus ultricies. Morbi in quam ultrices, fringilla nulla facilisis, tincidunt risus. Vestibulum dictum libero metus, id vehicula diam laoreet sit amet. In hac habitasse platea dictumst. Integer vitae aliquam arcu. Duis eu tellus placerat, malesuada enim sed, vehicula neque. Sed faucibus felis massa, id ultrices justo imperdiet non.
-
-Morbi finibus mi non efficitur faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lectus elit, hendrerit sit amet auctor quis, dictum in mauris. Cras vel rutrum est, sit amet pulvinar augue. Aenean ornare metus eu nulla maximus sollicitudin. Quisque eu mi eu ipsum pharetra placerat. Etiam volutpat molestie lacus, in varius risus blandit at. Nulla commodo pulvinar elit, id laoreet mauris euismod eget.
           </p>
         </div>
 

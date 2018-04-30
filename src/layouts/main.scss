@@ -12,6 +12,7 @@ body {
   position: relative;
   padding-left: $sidebar-width;
   font-size: 14px;
+  border-right: 1px solid #ccc;
 
   ul {
     padding-left: 15px;
@@ -43,7 +44,7 @@ body {
         width: $company-icon-size;
         height: $company-icon-size;  
       }
-      
+
       position: absolute;
       width: $company-icon-size;
       height: $company-icon-size;
