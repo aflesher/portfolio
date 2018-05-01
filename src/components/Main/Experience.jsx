@@ -11,9 +11,8 @@ class Experience extends React.Component {
           <div className="name">
             {this.props.name}
           </div>
-          <div className="info">
-            <span className="title">{this.props.title} - </span>
-            <span className="location">{this.props.location}</span>
+          <div className="title">
+            {this.props.title}
           </div>
           <div className="date">
             {this.props.date}
