@@ -2,6 +2,12 @@
   position: absolute;
 }
 
+@include media-breakpoint-down(md) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}
+
 .sidebar {
   background-color: #3d484e;
   color: white;

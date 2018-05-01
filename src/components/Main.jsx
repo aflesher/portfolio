@@ -1,13 +1,15 @@
 import React from "react";
 import Experience from "./Main/Experience.jsx";
 import Project from "./Main/Project.jsx";
+import Resume from "./Main/Resume.jsx";
 
 import changeLogo from "../images/change.png";
 import zyngaLogo from "../images/zynga.png";
 
 import outrunImage from "../images/outrun.png";
 import odysseyImage from "../images/odyssey.png";
-import epp2dImage from "../images/epp2d.png";
+import epp2dImage from "../images/epp2d.jpg";
+import flockImage from "../images/flock-icon.png";
 
 class Component extends React.Component {
   constructor(props) {
@@ -57,6 +59,9 @@ class Component extends React.Component {
   render() {
     return (
       <div className="main">
+        <div className="header">
+          Mobile Header
+        </div>
         <div className="about-me section" ref="0">
           <h1>
             About Me
@@ -91,6 +96,11 @@ class Component extends React.Component {
             I led a feature development team that helped ship the final product. Later I was asked to join a new team that was building a native iOS/Android social
             application.</p>
           </Experience>
+          <hr />
+          <Experience icon={flockImage} name="Flock" title="Senior Software Engineer" location="Victoria, BC" date="Oct 2009 - Dec 2010 (1.5 years)">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium.
+              Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum.</p>
+          </Experience>
         </div>
 
         <div className="projects section" ref="2">
@@ -107,39 +117,35 @@ class Component extends React.Component {
           <p>
             Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with. Here are a few things I've been working on:
           </p>
-          <hr />
-          <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
-            <p>
-              Outrun Shader
-            </p>
-          </Project>
-          <hr />
-          <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
-            <p>
-              Odyssey Shader
-            </p>
-          </Project>
+          <div>
+            <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
+            <div className="details">
+                I really like 80s "Outrun" style of artwork. I decided to create a shader based on this.
+              </div>
+            </Project>
+            <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
+              <div className="details">
+              I tried replicate the look and feel of monitors you'd see in old science fiction movies like 2001: A Space Odyssey. These were effects were done by using a projector which is why you see a flicker and inconsistent colors. It was a interesting challenge trying to recreate this as a shader.
+              </div>
+            </Project>
+          </div>
           <h2>
             Unity
           </h2>
           <p>
             There is so many amazing free guides and resources for Unity. I've been trying to give something back to the community.
           </p>
-          <hr />
-          <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity" title="Entity Post-Processor 2D">
-            <p>
-            One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets. A solution to doing this was to create a multi-camera system that rendered these assets to a render texture. It worked great so I built a tool to help automate the setup process.
-            </p>
-          </Project>
+          <div>
+            <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity" title="Entity Post-Processor 2D">
+            <div className="details">
+              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets. A solution to doing this was to create a multi-camera system that rendered these assets to a render texture. It worked great so I built a tool to help automate the setup process.
+              </div>
+            </Project>
+          </div>
         </div>
 
         <div className="resume section" ref="3">
-          <h1>
-            Resume
-          </h1>
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium. Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum. In elementum id neque quis vulputate. Duis fringilla ultricies tellus a iaculis. Integer facilisis risus in quam interdum, ut malesuada nibh pulvinar. Pellentesque mollis lacinia ullamcorper. Pellentesque ultrices, sapien luctus egestas fringilla, eros nulla commodo libero, eget viverra libero tortor at ante.
-          </p>
+          <Resume />
         </div>
 
       </div>

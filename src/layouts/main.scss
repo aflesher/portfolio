@@ -8,12 +8,17 @@ body {
 }
 
 @mixin project($image-width, $image-height) {
-  padding-left: $image-width + 10px;
-  position:relative;
+  padding: 5px;
   display: block;
-  min-height: $image-height;
   color: $text-color;
   text-decoration: none;
+  border-bottom: 1px solid #ccc;
+
+  .project-inner {
+    padding-left: $image-width + 10px;
+    position:relative;
+    min-height: $image-height;
+  }
   
   .image {
     position: absolute;
@@ -26,13 +31,36 @@ body {
   .title {
     font-weight: bold;
   }
+
+  .details {
+    font-size: 12px;
+  }
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &:first-child {
+    border-top: 1px solid #ccc;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .page {
+    padding-left: $sidebar-width;
+  }
+
+  .main {
+    .header {
+      display: none;
+    }
+  }
 }
 
 .page {
   width: $main-width;
   margin: 0 auto;
   position: relative;
-  padding-left: $sidebar-width;
   font-size: 14px;
   border-right: 1px solid #ccc;
 }
@@ -53,6 +81,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-decoration: underline;
+    padding-top: 10px;
   }
 
   a {
@@ -110,7 +139,39 @@ body {
     }
 
     .unity {
-      @include project(300px, 110px);
+      @include project(200px, 119px);
+    }
+
+    hr {
+      margin: 0;
+    }
+  }
+
+  .resume {
+    .resume-name {
+      font-size: 28px;
+    }
+
+    .resume-title {
+      font-size: 20px;
+      color: $resume-text-color;
+    }
+
+    .resume-heading {
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $resume-text-color;
+      margin: 25px 0 5px 0;
+    }
+
+    .resume-dates {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .resume-company {
+      font-size: 15px;
     }
   }
 }
