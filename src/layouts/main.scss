@@ -15,15 +15,12 @@ body {
   border-bottom: 1px solid #ccc;
 
   .project-inner {
-    padding-left: $image-width + 10px;
     position:relative;
     min-height: $image-height;
+    padding-left: $image-width + 10px;
   }
   
   .image {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: $image-width;
     height: $image-height;
   }
@@ -55,10 +52,24 @@ body {
       display: none;
     }
   }
+
+  .project-inner {
+    .image {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .project-inner {
+    padding-left: 0px !important;
+  }
 }
 
 .page {
-  width: $main-width;
+  max-width: $main-width;
   margin: 0 auto;
   position: relative;
   font-size: 14px;

@@ -5,11 +5,11 @@ class Project extends React.Component {
     return (
       <a className={this.props.className} href={this.props.url}>
         <div className="project-inner">
-          <div className="image">
-            <img src={this.props.image} />
-          </div>
           <div className="title">
             {this.props.title}
+          </div>
+          <div className="image">
+            <img src={this.props.image} />
           </div>
           {this.props.children}
         </div>
