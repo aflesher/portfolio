@@ -10,10 +10,47 @@ import odysseyImage from "../images/odyssey.png";
 import epp2dImage from "../images/epp2d.png";
 
 class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      autoScrollToIndex: -1
+    }
+  }
 
+  // a problem is this that this shouldn't always mean scroll. if the activeContentIndex state is
+  // changed due to a scroll event we want to ignore
   componentWillUpdate(nextProps, nextState) {
-    if (nextProps.activeContentIndex != this.props.activeContentIndex) {
+    if (nextProps.activeContentIndex != this.props.activeContentIndex && nextProps.scrollTriggerIsNav) {
+      this.setState({autoScrollToIndex: nextProps.activeContentIndex});
       this.refs[nextProps.activeContentIndex].scrollIntoView({block: 'start', behavior: 'smooth'});
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    if (this.state.autoScrollToIndex != -1) {
+      var rect = this.refs[this.state.autoScrollToIndex].getBoundingClientRect();
+      if (rect.top == 0) {
+        this.setState({autoScrollToIndex: -1});
+      }
+      return;
+    }
+    
+    for (var i = 0; i < 4; i++) {
+      var rect = this.refs[i].getBoundingClientRect();
+      if (rect.top >= 0) {
+        if (this.props.handleScroll) {
+          this.props.handleScroll(i);
+        }
+        break;
+      }
     }
   }
 
@@ -71,13 +108,13 @@ class Component extends React.Component {
             Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with. Here are a few things I've been working on:
           </p>
           <hr />
-          <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader">
+          <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
             <p>
               Outrun Shader
             </p>
           </Project>
           <hr />
-          <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader">
+          <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
             <p>
               Odyssey Shader
             </p>
@@ -89,7 +126,7 @@ class Component extends React.Component {
             There is so many amazing free guides and resources for Unity. I've been trying to give something back to the community.
           </p>
           <hr />
-          <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity">
+          <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity" title="Entity Post-Processor 2D">
             <p>
             One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets. A solution to doing this was to create a multi-camera system that rendered these assets to a render texture. It worked great so I built a tool to help automate the setup process.
             </p>

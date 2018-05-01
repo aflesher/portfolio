@@ -22,6 +22,10 @@ body {
     width: $image-width;
     height: $image-height;
   }
+
+  .title {
+    font-weight: bold;
+  }
 }
 
 .page {

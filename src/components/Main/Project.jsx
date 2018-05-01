@@ -7,6 +7,9 @@ class Project extends React.Component {
         <div className="image">
           <img src={this.props.image} />
         </div>
+        <div className="title">
+          {this.props.title}
+        </div>
         {this.props.children}
       </a>
     );
