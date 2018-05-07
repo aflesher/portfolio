@@ -18,14 +18,14 @@ class Resume extends React.Component {
           Technical Proficiencies
         </div>
         <div>
-          Unity C#, ShaderLab, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins
+          Unity C#, ShaderLab, Etheruem Solidity, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins
         </div>
         <div className="resume-heading">
           Experience
         </div>
         <div>
           <div className="resume-company">
-            <b>Dark Territory Games Inc,  Victoria BC</b><i> - Owner/Developer</i>
+            <b>Dark Territory, Victoria BC</b><i> - Owner/Developer</i>
           </div>
           <div className="resume-dates">OCT 2016 - MAR 2018</div>
           <ul>
@@ -61,6 +61,18 @@ class Resume extends React.Component {
             <li>Working with project manager to breakdown, cost and assign tasks each sprint.</li>
             <li>Conducting employee reviews and mentoring junior engineers.</li>
             <li>General feature development and bug fixing.</li>
+          </ul>
+        </div>
+        <div>
+          <div className="resume-company">
+            <b>Flock, Victoria BC</b><i> - Senior Software Engineer</i>
+          </div>
+          <div className="resume-dates">OCT 2009 - DEC 2010</div>
+          <ul>
+            <li>Was a senior engineer who worked on the flock web browser.</li>
+            <li>Built, updated and deployed the flock.com homepage.</li>
+            <li>Helped to port the flock web browser to OSX/Cocoa.</li>
+            <li>Built internal pages for the web browser.</li>
           </ul>
         </div>
         <div className="resume-heading">

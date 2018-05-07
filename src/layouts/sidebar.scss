@@ -16,58 +16,28 @@
   position: fixed;
   margin-left: -$sidebar-width;
 
-  a {
-    color: white;
-    text-decoration: underline;
-    font-size: 12px;
-  }
-
-  .icon {
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  .links {
-    padding: 15px;
-
-    .link {
-      padding: 3px 0;
-    }
-  }
-
   .header {
-    background-color: #283136;
     width: 100%;
     height: 300px;
 
     .avatar {
-      width: 150px;
-      height: 180px;
       padding-top: 30px;
       margin-left: auto;
       margin-right: auto;
-  
-      img {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-      }
     }
 
     .name {
-      text-transform: uppercase;
-      font-size: 18px;
-      font-weight: bold;
       text-align: center;
       padding-top: 25px;
     }
 
     .title {
-      font-size: 16px;
       text-align: center;
     }
+  }
+
+  .links {
+    padding: 15px;
   }
 
   .nav-item {

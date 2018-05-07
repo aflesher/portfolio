@@ -1,0 +1,62 @@
+.mobile-header {
+  background-color: #283136;
+  color: white;
+  position: relative;
+  padding: 10px 10px 10px 170px;
+  min-height: $avatar-height;
+
+  .header {
+
+    .avatar {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+  }
+}
+
+.header {
+  background-color: $header-color;
+
+  .avatar {
+    width: 150px;
+    height: $avatar-height;
+
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .name {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+.header-wrapper {
+  .links {
+    .link {
+      padding: 3px 0;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+      font-size: 12px;
+    }
+  }
+
+  .icon {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Experience from "./Main/Experience.jsx";
 import Project from "./Main/Project.jsx";
 import Resume from "./Main/Resume.jsx";
+import Header from "./Main/Header.jsx";
 
 import changeLogo from "../images/change.png";
 import zyngaLogo from "../images/zynga.png";
@@ -59,18 +60,17 @@ class Component extends React.Component {
   render() {
     return (
       <div className="main">
-        <div className="header">
-          Mobile Header
+        <div className="mobile-header">
+          <Header />
         </div>
         <div className="about-me section" ref="0">
           <h1>
             About Me
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium.
-            Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum.
-            In elementum id neque quis vulputate. Duis fringilla ultricies tellus a iaculis. Integer facilisis risus in quam interdum, ut malesuada nibh pulvinar.
-            Pellentesque mollis lacinia ullamcorper. Pellentesque ultrices, sapien luctus egestas fringilla, eros nulla commodo libero, eget viverra libero tortor at ante.
+            I'm software engineer with over 14 years experience as both a developer and a lead. My background is primarily in web development but game development
+            and cryptocurrencies have become my passion. I pride myself on my ability to lead and motivate others. I'm always striving to build new skills in everything
+            from programming to public speaking.
           </p>
         </div>
 
@@ -98,8 +98,8 @@ class Component extends React.Component {
           </Experience>
           <hr />
           <Experience icon={flockImage} name="Flock" title="Senior Software Engineer" location="Victoria, BC" date="Oct 2009 - Dec 2010 (1.5 years)">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium.
-              Quisque venenatis euismod nunc vel fermentum. Proin posuere turpis quis sollicitudin condimentum. Nam tincidunt risus sed convallis dictum.</p>
+            <p>Flock was web browser built on chrome that had social features for Facebook and Twitter baked into the application.
+              I did a lot of work to port the application to OSX as well as building internal pages used by the browser.</p>
           </Experience>
         </div>
 
@@ -107,10 +107,6 @@ class Component extends React.Component {
           <h1>
             Open Source Projects
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget finibus dolor, ac luctus est. Maecenas gravida commodo pretium.
-            Quisque venenatis euismod nunc vel fermentum.
-          </p>
           <h2>
             Shaders
           </h2>
@@ -120,12 +116,12 @@ class Component extends React.Component {
           <div>
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
             <div className="details">
-                I really like 80s "Outrun" style of artwork. I decided to create a shader based on this.
+                I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
               </div>
             </Project>
             <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
               <div className="details">
-              I tried replicate the look and feel of monitors you'd see in old science fiction movies like 2001: A Space Odyssey. These were effects were done by using a projector which is why you see a flicker and inconsistent colors. It was a interesting challenge trying to recreate this as a shader.
+              I tried replicate the look and feel of monitors you'd see in old science fiction movies like 2001: A Space Odyssey. These were effects were done by using a projector which is why you see a flicker and inconsistent colors. It was an interesting challenge trying to recreate this effect as a shader.
               </div>
             </Project>
           </div>
@@ -133,7 +129,7 @@ class Component extends React.Component {
             Unity
           </h2>
           <p>
-            There is so many amazing free guides and resources for Unity. I've been trying to give something back to the community.
+            There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
           </p>
           <div>
             <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity" title="Entity Post-Processor 2D">
