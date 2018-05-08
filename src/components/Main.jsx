@@ -6,7 +6,7 @@ import Header from "./Main/Header.jsx";
 
 import changeLogo from "../images/change.png";
 import zyngaLogo from "../images/zynga.png";
-
+import dtLogo from "../images/logo-dt.png";
 import outrunImage from "../images/outrun.png";
 import odysseyImage from "../images/odyssey.png";
 import epp2dImage from "../images/epp2d.jpg";
@@ -68,7 +68,7 @@ class Component extends React.Component {
             About Me
           </h1>
           <p>
-            I'm software engineer with over 14 years experience as both a developer and a lead. My background is primarily in web development but game development
+            I'm a software engineer with over 14 years experience as both a developer and a lead. My background is primarily in web development but game development
             and cryptocurrencies have become my passion. I pride myself on my ability to lead and motivate others. I'm always striving to build new skills in everything
             from programming to public speaking.
           </p>
@@ -78,9 +78,9 @@ class Component extends React.Component {
           <h1>
             Experience
           </h1>
-          <Experience icon={changeLogo} name="Dark Territory" title="Owner/Developer" location="Victoria, BC" date="oct 2016 - apr 2018 (1.5 years)">
-            <p>In 2016 I left my job to fulfill a lifelong dream of starting an Independent game studio. I set out to build a procedurally generated 2D
-              platformer using Unity as the studios first title. Although I was happy with the progress I had made I made a difficult decision to put the
+          <Experience icon={dtLogo} name="Dark Territory" title="Owner/Developer" location="Victoria, BC" date="oct 2016 - apr 2018 (1.5 years)">
+            <p>In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D
+              platformer using Unity. Although I was happy with the progress I had made I made a difficult decision to put the
               game on hold and pursue other interests.</p>
           </Experience>
           <hr />
