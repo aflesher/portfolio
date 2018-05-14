@@ -4,6 +4,9 @@ class Resume extends React.Component {
   render() {
     return (
       <div>
+        <div className="google-docs-link">
+          <a href="https://drive.google.com/open?id=1eFLlwcZDcNUwEJ22zEKPnmMh5NrU80FZgJtywfC-VBo">Google Docs Version</a>
+        </div>
         <div className="resume-name">
           Adam Flesher
         </div>
@@ -27,7 +30,7 @@ class Resume extends React.Component {
           <div className="resume-company">
             <b>Dark Territory, Victoria BC</b><i> - Owner/Developer</i>
           </div>
-          <div className="resume-dates">OCT 2016 - MAR 2018</div>
+          <div className="resume-dates">OCT 2016 - APR 2018</div>
           <ul>
             <li>Started a self funded independent game company.</li>
             <li>Designed a built tools for building and testing a procedurally generated 2D game in Unity.</li>
@@ -75,6 +78,9 @@ class Resume extends React.Component {
             <li>Built internal pages for the web browser.</li>
           </ul>
         </div>
+        <div>
+          +5 years of software development experience at various companies in Victoria
+          </div>
         <div className="resume-heading">
           Education
         </div>

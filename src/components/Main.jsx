@@ -68,9 +68,16 @@ class Component extends React.Component {
             About Me
           </h1>
           <p>
-            I'm a software engineer with over 14 years experience as both a developer and a lead. My background is primarily in web development but game development
-            and cryptocurrencies have become my passion. I pride myself on my ability to lead and motivate others. I'm always striving to build new skills in everything
-            from programming to public speaking.
+            As a developer with over 14 years experience I am a valuable addition to any team as either a lead or an individual contributor. I have a proven track record of delivering high-quality, scalable and stable applications.
+          </p>
+          <p>
+            I have an extensive background in building web applications. Through this experience I've learned first hand what processes, technologies and even which types of engineers work well and which don't. 
+          </p>
+          <p>
+            My current areas of interest are game development and cryptocurrencies. My free time these days is pretty much divided between these two. Check out my github repo "/aflesher" to see what I've been working on.
+          </p>
+          <p>
+            I'm flexible with my working hours and am happy to work closely with any existing freelancers you work with.
           </p>
         </div>
 
