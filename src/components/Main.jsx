@@ -119,11 +119,6 @@ class Component extends React.Component {
                 I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
               </div>
             </Project>
-            <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
-              <div className="details">
-              I tried replicate the look and feel of monitors you'd see in old science fiction movies like 2001: A Space Odyssey. These were effects were done by using a projector which is why you see a flicker and inconsistent colors. It was an interesting challenge trying to recreate this effect as a shader.
-              </div>
-            </Project>
           </div>
           <h2>
             Unity
