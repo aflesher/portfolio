@@ -74,10 +74,7 @@ class Component extends React.Component {
             I have an extensive background in building web applications. Through this experience I've learned first hand what processes, technologies and even which types of engineers work well and which don't. 
           </p>
           <p>
-            My current areas of interest are game development and cryptocurrencies. My free time these days is pretty much divided between these two. Check out my github repo "/aflesher" to see what I've been working on.
-          </p>
-          <p>
-            I'm flexible with my working hours and am happy to work closely with any existing freelancers you work with.
+            Game development and cryptocurrencies are what excite me the most these days. I spent a lot of my free time learning and creating in these spaces.
           </p>
         </div>
 
