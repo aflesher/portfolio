@@ -1,0 +1,11 @@
+.wall-post {
+  @include clearfix;
+
+  .post-buttons {
+    float: right;
+  
+    button {
+      display: inline-block;
+    }
+  }
+}

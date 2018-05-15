@@ -5,3 +5,11 @@ $text-color: #000;
 $resume-text-color: #06658c;
 $header-color: #283136;
 $avatar-height: 180px;
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

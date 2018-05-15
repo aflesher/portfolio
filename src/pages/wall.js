@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import WallLib from "../library/wall";
+import Post from "../components/Wall/Post.jsx";
 import _ from "lodash";
 
 class Wall extends React.Component {
@@ -12,28 +13,30 @@ class Wall extends React.Component {
     };
   }
 
-  componentWillMount() {
-
-    // WallLib.addPost('line 1', 1, 'AA00FF');
-    // WallLib.addPost('line 2', 1, 'AA00FF');
-
+  updatePosts() {
     WallLib.getPosts(0, 10).then((posts) => {
       this.setState({posts});
     });
   }
 
+  componentWillMount() {
+
+    // WallLib.addPost('line 1', 1, 'AA00FF');
+    // WallLib.addPost('line 2', 1, 'AA00FF');
+    this.updatePosts();
+    
+  }
+
   render() {
     const posts = this.state.posts.map(function(post, i) {
-      return <li key={i} style={{color: post.color}}>{post.text}</li>
+      return <Post key={i} color={post.color} text={post.text} />
     });
 
     return (
       <div>
         <Link to="/">back home</Link>
         <hr />
-        <ul>
-          {posts}
-        </ul>
+        {posts}
       </div>
     );
   }

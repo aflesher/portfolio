@@ -68,6 +68,41 @@ var web3 = new Web3('http://localhost:7545'),
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPost",
+      "outputs": [
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "font",
+          "type": "uint256"
+        },
+        {
+          "name": "color",
+          "type": "bytes6"
+        },
+        {
+          "name": "poster",
+          "type": "address"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -200,7 +235,7 @@ var web3 = new Web3('http://localhost:7545'),
       "name": "SoldPost",
       "type": "event"
     }
-  ], contractAddress, {from: '0xedE1B5A2cFf6E64209beaD9E3238683000F4035D'});
+  ], contractAddress);
 
 function getAddresses() {
   return web3.eth.getAccounts();
@@ -210,18 +245,23 @@ function addPost(text, font, color) {
   return contract.methods.createPost(text, font, web3.utils.utf8ToHex(color)).send({from: '0xF7a1234911ECFD3DcF294000DfE16E37b0D59AF3', gas: 500000});
 }
 
+function listForSale(index) {
+  return contract.methods.sellPost(index).send({from: '0xF7a1234911ECFD3DcF294000DfE16E37b0D59AF3', gas: 500000});
+}
+
 function getPosts(offset, size) {
   return contract.methods.getPostsCount().call().then((result) => {
     console.log(result);
     let start = Math.min(offset, result - 1);
-    let finish = Math.min(offset + size - 1, result - 1);
+    let finish = Math.min(offset + size, result);
     let promises = [];
     for (let i = start; i < finish; i++) {
-      promises.push(contract.methods.posts(i).call());
+      promises.push(contract.methods.getPost(i).call());
     }
     
     return Promise.all(promises);
   }).then((posts) => {
+    console.log(posts);
     for (let i = 0; i < posts.length; i++) {
       posts[i].color = '#' + web3.utils.hexToUtf8(posts[i].color);
     }
