@@ -68,9 +68,13 @@ class Component extends React.Component {
             About Me
           </h1>
           <p>
-            I'm a software engineer with over 14 years experience as both a developer and a lead. My background is primarily in web development but game development
-            and cryptocurrencies have become my passion. I pride myself on my ability to lead and motivate others. I'm always striving to build new skills in everything
-            from programming to public speaking.
+            As a developer with over 14 years experience I am a valuable addition to any team as either a lead or an individual contributor. I have a proven track record of delivering high-quality, scalable and stable applications.
+          </p>
+          <p>
+            I have an extensive background in building web applications. Through this experience I've learned first hand what processes, technologies and even which types of engineers work well and which don't. 
+          </p>
+          <p>
+            Game development and cryptocurrencies are what excite me the most these days. I spent a lot of my free time learning and creating in these spaces.
           </p>
         </div>
 
@@ -117,11 +121,6 @@ class Component extends React.Component {
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
             <div className="details">
                 I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
-              </div>
-            </Project>
-            <Project image={odysseyImage} url="https://www.shadertoy.com/view/Md3BWN" className="shader" title="Odyssey Shader">
-              <div className="details">
-              I tried replicate the look and feel of monitors you'd see in old science fiction movies like 2001: A Space Odyssey. These were effects were done by using a projector which is why you see a flicker and inconsistent colors. It was an interesting challenge trying to recreate this effect as a shader.
               </div>
             </Project>
           </div>
