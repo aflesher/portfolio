@@ -96,6 +96,10 @@ var web3 = new Web3('http://localhost:7545'),
         {
           "name": "price",
           "type": "uint256"
+        },
+        {
+          "name": "index",
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -241,7 +245,7 @@ function getAddresses() {
   return web3.eth.getAccounts();
 }
 
-function addPost(text, font, color) {
+function createPost(text, font, color) {
   return contract.methods.createPost(text, font, web3.utils.utf8ToHex(color)).send({from: '0xF7a1234911ECFD3DcF294000DfE16E37b0D59AF3', gas: 500000});
 }
 
@@ -271,6 +275,6 @@ function getPosts(offset, size) {
 
 module.exports = {
   getAddresses,
-  addPost,
+  createPost,
   getPosts
 };

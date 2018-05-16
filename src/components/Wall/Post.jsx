@@ -9,10 +9,15 @@ class Component extends React.Component {
         </div>
         <div className="post-buttons">
         {this.props.price > 0 &&
-          <button type="button" className="btn btn-success">{this.props.salePrice}</button>
+          <div>
+            <button type="button" className="btn btn-success">{this.props.salePrice}</button>
+          </div>
         }
         {this.props.price != 0 &&
-          <button type="button" className="btn btn-primary">Sell</button>
+          <div>
+            <input type="textbox" placeholder="Wei"/>
+            <button type="button" className="btn btn-primary">Sell</button>
+          </div>
         }
         </div>
       </div>
