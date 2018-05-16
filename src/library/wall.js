@@ -9,8 +9,8 @@ function getAddresses() {
   return web3.eth.getAccounts();
 }
 
-function createPost(text, font, color) {
-  return contract.methods.createPost(text, font, web3.utils.utf8ToHex(color)).send({from: '0xc9B23c523034434fB4dC339cd335B32b351dC87c', gas: 500000});
+function createPost(text, font, red, green, blue) {
+  return contract.methods.createPost(text, font, red, green, blue).send({from: '0xc9B23c523034434fB4dC339cd335B32b351dC87c', gas: 500000});
 }
 
 function listForSale(index) {
@@ -29,7 +29,7 @@ function getPosts(offset, size) {
     return Promise.all(promises);
   }).then((posts) => {
     for (let i = 0; i < posts.length; i++) {
-      posts[i].color = '#' + web3.utils.hexToUtf8(posts[i].color);
+      posts[i].color = {r: posts[i].red, g: posts[i].green, b: posts[i].blue};
     }
     return Promise.resolve(posts);
   });

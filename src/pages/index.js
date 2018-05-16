@@ -22,7 +22,7 @@ class Index extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <Sidebar navItemOnClick={(e) => this.navItemOnClick(e)} activeNavItem={this.state.activeNavItem} scrollTriggerIsNav={this.state.scrollTriggerIsNav} />
         <Main activeContentIndex={this.state.activeNavItem} handleScroll={(e) => this.mainHandleScroll(e)} scrollTriggerIsNav={this.state.scrollTriggerIsNav} />
       </div>

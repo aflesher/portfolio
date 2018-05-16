@@ -1,17 +1,39 @@
+.wall {
+  padding: 10px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wall-post {
   position: relative;
   padding: 10px;
   min-height: 60px;
   border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  padding-right: 220px;
 
   .post-buttons {
     position: absolute;
     right: 10px;
     top: 10px;
+    width: 200px;
+  }
+}
 
-    input[type=textbox] {
-      margin-right: 3px;
-      width: 100px;
-    }
+.wall-create-post {
+  margin-top: 50px;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 10px;
+
+  .preview {
+    padding-top: 10px;
+    color: #666;
+    font-style: italic;
+  }
+
+  .wall-post {
+    border: none;
   }
 }

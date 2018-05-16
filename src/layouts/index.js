@@ -9,7 +9,7 @@ class Template extends React.Component {
   render() {
     const { location, children } = this.props
     return (
-      <div className="page">
+      <div>
         <Helmet>
           <title>Adam Flesher</title>
           <link rel="shortcut icon" href={favicon} type="image/png" />

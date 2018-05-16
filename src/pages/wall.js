@@ -6,6 +6,8 @@ import Post from "../components/Wall/Post.jsx";
 import CreatePost from "../components/Wall/CreatePost.jsx";
 import _ from "lodash";
 
+let fonts = ['Arial', 'Geneva', 'Georgia', 'Impact', 'Tahoma', 'Verdana'];
+
 class Wall extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class Wall extends React.Component {
   }
 
   createPost(text, font, color) {
-    WallLib.createPost(text, font, color).then(() => {
+    WallLib.createPost(text, font, color.r, color.g, color.b).then(() => {
       this.updatePosts();
     });
   }
@@ -38,15 +40,15 @@ class Wall extends React.Component {
 
   render() {
     const posts = this.state.posts.map(function(post, i) {
-      return <Post key={i} color={post.color} text={post.text} index={post.index} />
+      return <Post key={i} color={post.color} text={post.text} index={post.index} font={fonts[post.font]} />
     });
 
     return (
-      <div>
+      <div className="wall">
         <Link to="/">back home</Link>
         <hr />
         {posts}
-        <CreatePost onPostCreated={this.createPost.bind(this)} />
+        <CreatePost onPostCreated={this.createPost.bind(this)} fonts={fonts} />
       </div>
     );
   }
