@@ -34,7 +34,6 @@ class Wall extends React.Component {
 
   componentWillMount() {
     this.updatePosts();
-    
   }
 
   render() {
