@@ -1,4 +1,6 @@
 {
-  "address": "0x9D5614578EE8D46d92974138C3F0A9fC33808354",
-  "host": "http://localhost:7545"
+  "ropstenAddress": "0x87db93d0ef12b38272ab6bba25db654ab516aba4",
+  "localAddress": "<your ganache contract address>",
+  "host": "http://localhost:7545",
+  "local": false
 }

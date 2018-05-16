@@ -1,20 +1,42 @@
 var Web3 = require("web3"),
   abi = require('./abi.json'),
-  config = require('./config.json')
+  config = require('./config.json'),
 
-var web3 = new Web3(config.host),
-  contract = new web3.eth.Contract(abi, config.address);
+  useRopsten = window.web3 && !config.local,
+  web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host),
+  contract = new web3.eth.Contract(abi, useRopsten ? config.ropstenAddress : config.localAddress);
+
+function getAccount() {
+  return new Promise((resolve, reject) => {
+    web3.eth.getAccounts((err, accounts) => {
+      resolve(accounts[0]);
+    });
+  });
+}
+
+function verifyNetwork() {
+  return new Promise((resolve, reject) => {
+    web3.eth.net.getId((err, netId) => {
+      if (netId == 3) resolve();
+      else reject();
+    });
+  });
+}
 
 function getAddresses() {
   return web3.eth.getAccounts();
 }
 
 function createPost(text, font, red, green, blue) {
-  return contract.methods.createPost(text, font, red, green, blue).send({from: '0xc9B23c523034434fB4dC339cd335B32b351dC87c', gas: 500000});
+  return getAccount().then((account) => {
+    return contract.methods.createPost(text, font, red, green, blue).send({from: account, gas: 500000});
+  });
 }
 
 function listForSale(index) {
-  return contract.methods.sellPost(index).send({from: '0xc9B23c523034434fB4dC339cd335B32b351dC87c', gas: 500000});
+  return getAccount().then((account) => {
+    return contract.methods.sellPost(index).send({from: account, gas: 500000});
+  });
 }
 
 function getPosts(offset, size) {
