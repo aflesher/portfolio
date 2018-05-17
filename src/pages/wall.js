@@ -128,43 +128,46 @@ class Wall extends React.Component {
     });
 
     return (
-      <div className="wall">
-        <Link to="/">back home</Link>
-        <hr />
-        <div className="description-wrapper">
-          <button className="btn btn-secondary" type="button" onClick={this.toggleDescription} >
-            Description
-          </button>
-          {this.state.showDescription &&
-            <div className="card card-body">
-              <p>
-                This is a sample application that allows users to post text to a wall using an Ethereum smart contract (on the Ropsten test network).
-                Users can write a line of text, with a desired color and font and append it to the bottom of the wall. Any user can also list a post slot
-                for sale. Once a slot is for sale any user can pay the asking price and take ownership of the slot.
-              </p>
-              <p>
-                This was only written as a demonstration of a smart contract based web application ...
-                it has no real world application :p
-              </p>
-            </div>
-          }
+      <div>
+        <div className="home-link">
+          <Link to="/">{"< back home"}</Link>
         </div>
-        <div className="paginate d-flex justify-content-center">
-          <Paginate
-            pageCount={Math.ceil(this.state.postsCount / 10)}
-            onPageChange={this.handlePageChange}
-            nextLabel=">"
-            previousLabel="<"
+        <div className="wall">
+          <div className="description-wrapper">
+            <button className="btn btn-secondary" type="button" onClick={this.toggleDescription} >
+              Description
+            </button>
+            {this.state.showDescription &&
+              <div className="card card-body">
+                <p>
+                  This is a sample application that allows users to post text to a wall using an Ethereum smart contract (on the Ropsten test network).
+                  Users can write a line of text, with a desired color and font and append it to the bottom of the wall. Any user can also list a post slot
+                  for sale. Once a slot is for sale any user can pay the asking price and take ownership of the slot.
+                </p>
+                <p>
+                  This was only written as a demonstration of a smart contract based web application ...
+                  it has no real world application :p
+                </p>
+              </div>
+            }
+          </div>
+          <div className="paginate d-flex justify-content-center">
+            <Paginate
+              pageCount={Math.ceil(this.state.postsCount / 10)}
+              onPageChange={this.handlePageChange}
+              nextLabel=">"
+              previousLabel="<"
+            />
+          </div>
+          {posts}
+          <CreatePost
+            onPostCreated={this.createPost.bind(this)}
+            fonts={fonts}
+            title="Create new post"
+            index={this.state.postsCount}
+            confirmLabel="Create"
           />
         </div>
-        {posts}
-        <CreatePost
-          onPostCreated={this.createPost.bind(this)}
-          fonts={fonts}
-          title="Create new post"
-          index={this.state.postsCount}
-          confirmLabel="Create"
-        />
       </div>
     );
   }
