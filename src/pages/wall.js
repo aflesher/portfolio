@@ -24,6 +24,10 @@ class Wall extends React.Component {
     this.handlePageChange = this.handlePageChange.bind(this);
     this.updatePost = this.updatePost.bind(this);
     this.toggleDescription = this.toggleDescription.bind(this);
+    this.sellPost = this.sellPost.bind(this);
+    this.updatePost = this.updatePost.bind(this);
+    this.unlistPost = this.unlistPost.bind(this);
+    this.buyPost = this.buyPost.bind(this);
   }
 
   getAccount() {
@@ -45,22 +49,47 @@ class Wall extends React.Component {
 
   createPost(text, font, color) {
     WallLib.createPost(text, font, color.r, color.g, color.b);
+    if (this.state.posts.length < 10) {
+      let posts = this.state.posts;
+      posts.push({
+        text,
+        font,
+        color,
+        poster: this.state.account,
+        price: 0,
+        index: this.state.postsCount
+      });
+      this.setState({posts});
+    }
+  }
+
+  changePost(data) {
+    let index = _.findIndex(this.state.posts, {index: data.index});
+    if (index != -1) {
+      let posts = this.state.posts;
+      posts[index] = _.assign(posts[index], data);
+      this.setState({posts});
+    }
   }
 
   updatePost(index, text, font, color) {
     WallLib.updatePost(index, text, font, color.r, color.g, color.b);
+    this.changePost({index, text, font, color});
   }
 
   sellPost(index, price) {
     WallLib.listForSale(index, price);
+    this.changePost({index, price});
   }
 
   unlistPost(index) {
     WallLib.unlistForSale(index);
+    this.changePost({index, price: 0});
   }
 
   buyPost(index, price) {
     WallLib.buyPost(index, price);
+    this.changePost({index, price: 0, poster: this.state.account});
   }
 
   handlePageChange(resp) {
