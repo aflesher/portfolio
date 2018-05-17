@@ -33,6 +33,10 @@ function createPost(text, font, red, green, blue) {
   });
 }
 
+function getPostsCount() {
+  return contract.methods.getPostsCount().call();
+}
+
 function listForSale(index) {
   return getAccount().then((account) => {
     return contract.methods.sellPost(index).send({from: account, gas: 500000});
@@ -60,5 +64,6 @@ function getPosts(offset, size) {
 module.exports = {
   getAddresses,
   createPost,
-  getPosts
+  getPosts,
+  getPostsCount
 };

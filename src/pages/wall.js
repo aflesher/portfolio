@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import Paginate from "react-paginate";
 import WallLib from "../library/wall";
 import Post from "../components/Wall/Post.jsx";
 import CreatePost from "../components/Wall/CreatePost.jsx";
@@ -12,13 +13,18 @@ class Wall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      postsCount: 0,
+      currentPage: 1
     };
   }
 
   updatePosts() {
     WallLib.getPosts(0, 10).then((posts) => {
       this.setState({posts});
+    });
+    WallLib.getPostsCount().then((count) => {
+      this.setState({postsCount: count});
     });
   }
 
@@ -47,6 +53,7 @@ class Wall extends React.Component {
       <div className="wall">
         <Link to="/">back home</Link>
         <hr />
+        <Paginate />
         {posts}
         <CreatePost onPostCreated={this.createPost.bind(this)} fonts={fonts} />
       </div>
