@@ -8,6 +8,7 @@ import CreatePost from "../components/Wall/CreatePost.jsx";
 import _ from "lodash";
 
 let fonts = ['Arial', 'Geneva', 'Georgia', 'Impact', 'Tahoma', 'Verdana'];
+let postsPerPage = 10;
 
 class Wall extends React.Component {
   constructor(props) {
@@ -15,12 +16,24 @@ class Wall extends React.Component {
     this.state = {
       posts: [],
       postsCount: 0,
-      currentPage: 1
+      currentPage: 1,
+      account: ''
     };
+
+    this.handlePageChange = this.handlePageChange.bind(this);
+  }
+
+  getAccount() {
+    WallLib.getAccount().then((account) => {
+      this.setState({
+        account
+      })
+    });
   }
 
   updatePosts() {
-    WallLib.getPosts(0, 10).then((posts) => {
+    let page = this.state.currentPage - 1;
+    WallLib.getPosts(page * postsPerPage, ((page + 1) * postsPerPage)).then((posts) => {
       this.setState({posts});
     });
     WallLib.getPostsCount().then((count) => {
@@ -40,20 +53,42 @@ class Wall extends React.Component {
     });
   }
 
+  handlePageChange(page) {
+    this.setState({
+      currentPage: page
+    })
+  }
+
   componentWillMount() {
     this.updatePosts();
+    this.getAccount();
   }
 
   render() {
-    const posts = this.state.posts.map(function(post, i) {
-      return <Post key={i} color={post.color} text={post.text} index={post.index} font={fonts[post.font]} />
+    const posts = this.state.posts.map((post, i) => {
+      return <Post
+        key={i}
+        color={post.color}
+        text={post.text}
+        index={post.index}
+        font={fonts[post.font]}
+        account={this.state.account}
+        poster={post.poster}
+      />
     });
 
     return (
       <div className="wall">
         <Link to="/">back home</Link>
         <hr />
-        <Paginate />
+        <div className="paginate">
+          <Paginate
+            pageCount={Math.ceil(this.state.postsCount / 10)}
+            onPageChange={this.handlePageChange}
+            nextLabel=">"
+            previousLabel="<"
+          />
+        </div>
         {posts}
         <CreatePost onPostCreated={this.createPost.bind(this)} fonts={fonts} />
       </div>

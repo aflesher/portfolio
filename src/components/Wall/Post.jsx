@@ -13,7 +13,7 @@ class Component extends React.Component {
             <button type="button" className="btn btn-success">{this.props.salePrice}</button>
           </div>
         }
-        {this.props.price != 0 && !this.props.hideActions &&
+        {this.props.price != 0 && !this.props.hideActions && this.props.poster == this.props.account &&
           <div className="row">
             <div className="col-8">
               <input type="textbox" placeholder="Wei" className="form-control" />

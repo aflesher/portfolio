@@ -65,5 +65,6 @@ module.exports = {
   getAddresses,
   createPost,
   getPosts,
-  getPostsCount
+  getPostsCount,
+  getAccount
 };

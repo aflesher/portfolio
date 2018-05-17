@@ -3,6 +3,22 @@
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
+
+  .paginate {
+    ul {
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  
+    li {
+      display: inline-block;
+    }
+  
+    .break a {
+      cursor: default;
+    }
+  }
 }
 
 .wall-post {
