@@ -7,9 +7,9 @@ class Component extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
-      font: 0,
-      color: {
+      text: this.props.text || '',
+      font: this.props.font || 0,
+      color: this.props.color || {
         r: 0,
         b: 0,
         g: 0
@@ -54,31 +54,31 @@ class Component extends React.Component {
 
     return (
       <div className="wall-create-post">
-        <h4>Create a new post</h4>
-        <div className="row">
-          <div className="col-1 preview">
-            preview:
-          </div>
-          <div className="col-11">
-            <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.props.fonts[this.state.font]} index="?" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-7">
+        <h4>{this.props.title}</h4>
+        <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.props.fonts[this.state.font]} index={this.props.index} />
+        <form>
+          <div className="form-group">
+            <label>Text</label>
             <textarea type="textbox" value={this.state.text} onChange={this.handleChange} className="form-control" maxLength="100" />
           </div>
-          <div className="col-2">
+          <div className="form-group">
+            <label>Font</label>
             <select className="form-control" value={this.state.font} onChange={this.handleFont}>
               {fonts}
             </select>
           </div>
-          <div className="col-2">
+          <div className="form-group">
+            <label>Color</label>
             <SketchPicker color={this.state.color} onChangeComplete={this.handleColor} />
           </div>
-          <div className="col-1">
-            <button onClick={this.handleSubmit} type="button" className="btn btn-primary">Create</button>
+          <div className="form-group">
+            <button onClick={this.handleSubmit} type="button" className="btn btn-primary">{this.props.confirmLabel}</button>
+            {this.props.showCancel &&
+              <button onClick={this.handleSubmit} type="button" className="btn btn-danger" onClick={this.props.handleCancel}>Cancel</button>
+            }
           </div>
-        </div>
+
+        </form>
       </div>
     );
   }

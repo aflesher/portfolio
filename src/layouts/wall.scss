@@ -27,17 +27,29 @@
   min-height: 60px;
   border-bottom: 1px solid #ccc;
   font-size: 20px;
-  padding-right: 220px;
+  padding-right: 320px;
 
   .post-buttons {
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 200px;
+    width: 300px;
+    text-align: right;
+
+    input {
+      display: inline-block;
+      width: 150px;
+      margin: 0 5px;
+    }
   }
 
   .text {
     display: inline-block;
+  }
+
+  .text-edit {
+    display: inline-block;
+    width: 100%;
   }
 
   .index {

@@ -21,6 +21,7 @@ class Wall extends React.Component {
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
+    this.updatePost = this.updatePost.bind(this);
   }
 
   getAccount() {
@@ -42,14 +43,15 @@ class Wall extends React.Component {
   }
 
   createPost(text, font, color) {
-    WallLib.createPost(text, font, color.r, color.g, color.b).then(() => {
-      this.updatePosts();
-    });
+    WallLib.createPost(text, font, color.r, color.g, color.b);
+  }
+
+  updatePost(index, text, font, color) {
+    WallLib.updatePost(index, text, font, color.r, color.g, color.b);
   }
 
   sellPost(index) {
     WallLib.listForSale(index).then(() => {
-
     });
   }
 
@@ -74,6 +76,8 @@ class Wall extends React.Component {
         font={fonts[post.font]}
         account={this.state.account}
         poster={post.poster}
+        fonts={fonts}
+        onPostUpdated={this.updatePost}
       />
     });
 
@@ -90,7 +94,13 @@ class Wall extends React.Component {
           />
         </div>
         {posts}
-        <CreatePost onPostCreated={this.createPost.bind(this)} fonts={fonts} />
+        <CreatePost
+          onPostCreated={this.createPost.bind(this)}
+          fonts={fonts}
+          title="Create new post"
+          index={this.state.postsCount}
+          confirmLabel="Create"
+        />
       </div>
     );
   }
