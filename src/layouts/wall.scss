@@ -35,6 +35,18 @@
     top: 10px;
     width: 200px;
   }
+
+  .text {
+    display: inline-block;
+  }
+
+  .index {
+    display: inline-block;
+    border-radius: 3px;
+    border: 2px solid black;
+    padding: 0 4px;
+    margin-right: 5px;
+  }
 }
 
 .wall-create-post {

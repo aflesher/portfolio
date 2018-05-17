@@ -60,7 +60,7 @@ class Component extends React.Component {
             preview:
           </div>
           <div className="col-11">
-            <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.props.fonts[this.state.font]} />
+            <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.props.fonts[this.state.font]} index="?" />
           </div>
         </div>
         <div className="row">

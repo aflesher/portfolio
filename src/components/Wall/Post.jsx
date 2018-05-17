@@ -1,11 +1,23 @@
 import React from "react";
 
 class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editing: false
+    }
+  };
+
   render() {
     return (
       <div className="wall-post clearfix">
         <div style={{color: `rgb(${this.props.color.r},${this.props.color.g},${this.props.color.b})`, fontFamily: this.props.font}}>
-          {this.props.text}
+          <div className="index" style={{borderColor: `rgb(${this.props.color.r},${this.props.color.g},${this.props.color.b})`}}>
+            {this.props.index}
+          </div>
+          <div className="text">
+            {this.props.text}
+          </div>
         </div>
         <div className="post-buttons">
         {this.props.price > 0 && !this.props.hideActions &&
