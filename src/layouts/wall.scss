@@ -4,15 +4,55 @@
   margin-left: auto;
   margin-right: auto;
 
-  .paginate {
-    ul {
-      display: inline-block;
-      padding-left: 15px;
-      padding-right: 15px;
+  .description-wrapper {
+    .card {
+      margin: 10px 0;
     }
-  
+  }
+
+  .paginate {
+    
+    ul {
+      background-color: #51b9e8;
+      margin: 0;
+      padding: 10px;
+    }
+
     li {
       display: inline-block;
+      text-align: center;
+      width: 30px;
+      height: 30px;
+
+      a {
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        border: none;
+      }
+    }
+
+    li.selected {
+      border: 2px solid #2c92d3;
+      border-radius: 50%;
+
+      a {
+        cursor: default;
+        color: #2c92d3;
+      }
+    }
+
+    li.disabled {
+      a {
+        cursor: default;
+        color: #2c92d3;
+      }
+    }
+
+    a:active, a:focus {
+      outline: 0;
+      border: none;
+      -moz-outline-style: none
     }
   
     .break a {

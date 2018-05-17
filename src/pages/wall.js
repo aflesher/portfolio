@@ -131,7 +131,7 @@ class Wall extends React.Component {
       <div className="wall">
         <Link to="/">back home</Link>
         <hr />
-        <div>
+        <div className="description-wrapper">
           <button className="btn btn-secondary" type="button" onClick={this.toggleDescription} >
             Description
           </button>
@@ -149,7 +149,7 @@ class Wall extends React.Component {
             </div>
           }
         </div>
-        <div className="paginate">
+        <div className="paginate d-flex justify-content-center">
           <Paginate
             pageCount={Math.ceil(this.state.postsCount / 10)}
             onPageChange={this.handlePageChange}
