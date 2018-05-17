@@ -5,12 +5,17 @@ class Component extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editing: false
+      editing: false,
+      salePrice: ''
     }
 
     this.handleEdit = this.handleEdit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.handleSell = this.handleSell.bind(this);
+    this.handleUnlist = this.handleUnlist.bind(this);
+    this.handlePriceChange = this.handlePriceChange.bind(this);
+    this.handleBuy = this.handleBuy.bind(this);
   };
 
   handleEdit() {
@@ -26,6 +31,23 @@ class Component extends React.Component {
     this.setState({editing: false});
   }
 
+  handleSell() {
+    this.props.onSell(this.props.index, this.state.salePrice);
+  }
+
+  handleUnlist() {
+    this.props.onUnlist(this.props.index);
+  }
+
+  handlePriceChange(event) {
+    this.setState({salePrice: event.target.value});
+  }
+
+  handleBuy() {
+    this.props.onBuy(this.props.index, this.props.price);
+  }
+
+
   render() {
     return (
       <div>
@@ -40,16 +62,17 @@ class Component extends React.Component {
               </div>
             </div>
             <div className="post-buttons">
-              {this.props.price > 0 && !this.props.hideActions &&
+              {this.props.price > 0 && !this.props.hideActions && this.props.poster != this.props.account &&
                 <div>
-                  <button type="button" className="btn btn-success">BUY {this.props.salePrice} Wei</button>
+                  <button type="button" className="btn btn-success" onClick={this.handleBuy}>Buy: {this.props.price} Wei</button>
                 </div>
               }
-              {this.props.price != 0 && !this.props.hideActions && this.props.poster == this.props.account &&
+              {!this.props.hideActions && this.props.poster == this.props.account &&
                 <div className="form-group">
                     <button type="button" className="btn btn-info" onClick={this.handleEdit}>Edit</button>
-                    <input type="textbox" placeholder="Wei" className="form-control" />
-                    <button type="button" className="btn btn-primary">Sell</button>
+                    {this.props.price == 0 && <input type="textbox" placeholder="Wei" className="form-control" value={this.state.salePrice} onChange={this.handlePriceChange} />}
+                    {this.props.price == 0 && <button type="button" className="btn btn-primary" onClick={this.handleSell}>Sell</button>}
+                    {this.props.price != 0 && <button type="button" className="btn btn-warning" onClick={this.handleUnlist}>Cancel: {this.props.price} Wei </button>}
                 </div>
               }
             </div>

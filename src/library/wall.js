@@ -43,9 +43,21 @@ function getPostsCount() {
   return contract.methods.getPostsCount().call();
 }
 
-function listForSale(index) {
+function listForSale(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.sellPost(index).send({from: account, gas: 500000});
+    return contract.methods.sellPost(index, price).send({from: account, gas: 500000});
+  });
+}
+
+function unlistForSale(index) {
+  return getAccount().then((account) => {
+    return contract.methods.closePostSale(index).send({from: account, gas: 500000});
+  });
+}
+
+function buyPost(index, price) {
+  return getAccount().then((account) => {
+    return contract.methods.buyPost(index).send({from: account, gas: 500000, value: price});
   });
 }
 
@@ -73,5 +85,8 @@ module.exports = {
   updatePost,
   getPosts,
   getPostsCount,
-  getAccount
+  getAccount,
+  listForSale,
+  unlistForSale,
+  buyPost
 };

@@ -35,7 +35,6 @@ class Wall extends React.Component {
   }
 
   updatePosts(page) {
-    console.log(this.state.currentPage, page, page * postsPerPage, ((page + 1) * postsPerPage));
     WallLib.getPosts(page * postsPerPage, ((page + 1) * postsPerPage)).then((posts) => {
       this.setState({posts});
     });
@@ -52,9 +51,16 @@ class Wall extends React.Component {
     WallLib.updatePost(index, text, font, color.r, color.g, color.b);
   }
 
-  sellPost(index) {
-    WallLib.listForSale(index).then(() => {
-    });
+  sellPost(index, price) {
+    WallLib.listForSale(index, price);
+  }
+
+  unlistPost(index) {
+    WallLib.unlistForSale(index);
+  }
+
+  buyPost(index, price) {
+    WallLib.buyPost(index, price);
   }
 
   handlePageChange(resp) {
@@ -85,6 +91,10 @@ class Wall extends React.Component {
         poster={post.poster}
         fonts={fonts}
         onPostUpdated={this.updatePost}
+        price={post.price}
+        onSell={this.sellPost}
+        onUnlist={this.unlistPost}
+        onBuy={this.buyPost}
       />
     });
 

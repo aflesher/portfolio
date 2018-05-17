@@ -36,10 +36,13 @@
     width: 300px;
     text-align: right;
 
+    button, input {
+      margin-left: 5px;
+    }
+
     input {
       display: inline-block;
       width: 150px;
-      margin: 0 5px;
     }
   }
 
