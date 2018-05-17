@@ -10,6 +10,7 @@
   "dependencies": {
     "ajv": "^6.5.0",
     "bootstrap": "^4.1.0",
+    "electron": "^2.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.40",
