@@ -108,22 +108,11 @@ class Component extends React.Component {
         </div>
 
         <div className="projects section" ref="2">
+          
           <h1>
             Open Source Projects
           </h1>
-          <h2>
-            Shaders
-          </h2>
-          <p>
-            Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with. Here are a few things I've been working on:
-          </p>
-          <div>
-            <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
-            <div className="details">
-                I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
-              </div>
-            </Project>
-          </div>
+
           <h2>
             Unity
           </h2>
@@ -137,6 +126,21 @@ class Component extends React.Component {
               </div>
             </Project>
           </div>
+
+          <h2>
+            Shaders
+          </h2>
+          <p>
+            Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with. Here are a few things I've been working on:
+          </p>
+          <div>
+            <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
+            <div className="details">
+                I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
+              </div>
+            </Project>
+          </div>
+
         </div>
 
         <div className="resume section" ref="3">
