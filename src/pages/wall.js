@@ -16,12 +16,14 @@ class Wall extends React.Component {
     this.state = {
       posts: [],
       postsCount: 0,
-      currentPage: 1,
-      account: ''
+      currentPage: 0,
+      account: '',
+      showDescription: false
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
     this.updatePost = this.updatePost.bind(this);
+    this.toggleDescription = this.toggleDescription.bind(this);
   }
 
   getAccount() {
@@ -32,8 +34,8 @@ class Wall extends React.Component {
     });
   }
 
-  updatePosts() {
-    let page = this.state.currentPage - 1;
+  updatePosts(page) {
+    console.log(this.state.currentPage, page, page * postsPerPage, ((page + 1) * postsPerPage));
     WallLib.getPosts(page * postsPerPage, ((page + 1) * postsPerPage)).then((posts) => {
       this.setState({posts});
     });
@@ -55,15 +57,20 @@ class Wall extends React.Component {
     });
   }
 
-  handlePageChange(page) {
+  handlePageChange(resp) {
     this.setState({
-      currentPage: page
-    })
+      currentPage: resp.selected
+    });
+    this.updatePosts(resp.selected);
   }
 
   componentWillMount() {
-    this.updatePosts();
+    this.updatePosts(this.state.currentPage);
     this.getAccount();
+  }
+
+  toggleDescription() {
+    this.setState({showDescription: !this.state.showDescription});
   }
 
   render() {
@@ -85,6 +92,24 @@ class Wall extends React.Component {
       <div className="wall">
         <Link to="/">back home</Link>
         <hr />
+        <div>
+          <button className="btn btn-secondary" type="button" onClick={this.toggleDescription} >
+            Description
+          </button>
+          {this.state.showDescription &&
+            <div className="card card-body">
+              <p>
+                This is a sample application that allows users to post text to a wall using an Ethereum smart contract (on the Ropsten test network).
+                Users can write a line of text, with a desired color and font and append it to the bottom of the wall. Any user can also list a post slot
+                for sale. Once a slot is for sale any user can pay the asking price and take ownership of the slot.
+              </p>
+              <p>
+                This was only written as a demonstration of a smart contract based web application ...
+                it has no real world application :p
+              </p>
+            </div>
+          }
+        </div>
         <div className="paginate">
           <Paginate
             pageCount={Math.ceil(this.state.postsCount / 10)}

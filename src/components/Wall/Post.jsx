@@ -59,7 +59,7 @@ class Component extends React.Component {
           <CreatePost
             onPostCreated={this.handleUpdate}
             fonts={this.props.fonts}
-            title="Change new post"
+            title="Change your post"
             index={this.props.index}
             confirmLabel="Update"
             showCancel={true}
