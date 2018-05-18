@@ -39,7 +39,7 @@ class Wall extends React.Component {
   }
 
   updatePosts(page) {
-    WallLib.getPosts(page * postsPerPage, ((page + 1) * postsPerPage)).then((posts) => {
+    WallLib.getPosts(page * postsPerPage, postsPerPage).then((posts) => {
       this.setState({posts});
     });
     WallLib.getPostsCount().then((count) => {
@@ -100,7 +100,6 @@ class Wall extends React.Component {
   }
 
   handleScriptLoad() {
-    console.log('script load');
     WallLib.init();
     this.updatePosts(this.state.currentPage);
     this.getAccount();
