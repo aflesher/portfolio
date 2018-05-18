@@ -70,7 +70,7 @@ function unlistForSale(index) {
 
 function buyPost(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.buyPost(index).send({from: account, gas: 500000, value: web3.utils.toWei(price, 'ether')});
+    return contract.methods.buyPost(index).send({from: account, gas: 26891, value: web3.utils.toWei(price, 'ether')});
   });
 }
 
