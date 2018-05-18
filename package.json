@@ -19,7 +19,6 @@
     "react-color": "^2.14.1",
     "react-helmet": "^5.2.0",
     "react-paginate": "^5.2.3",
-    "webpack": "^1.9.11",
-    "websocket": "^1.0.26"
+    "webpack": "^1.9.11"
   }
 }
