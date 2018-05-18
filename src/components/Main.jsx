@@ -3,6 +3,7 @@ import Experience from "./Main/Experience.jsx";
 import Project from "./Main/Project.jsx";
 import Resume from "./Main/Resume.jsx";
 import Header from "./Main/Header.jsx";
+import Link from "gatsby-link";
 
 import changeLogo from "../images/change.png";
 import zyngaLogo from "../images/zynga.png";
@@ -11,6 +12,7 @@ import outrunImage from "../images/outrun.png";
 import odysseyImage from "../images/odyssey.png";
 import epp2dImage from "../images/epp2d.jpg";
 import flockImage from "../images/flock-icon.png";
+import wallscImage from "../images/wallsc.png";
 
 class Component extends React.Component {
   constructor(props) {
@@ -18,6 +20,8 @@ class Component extends React.Component {
     this.state = {
       autoScrollToIndex: -1
     }
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   // a problem is this that this shouldn't always mean scroll. if the activeContentIndex state is
@@ -30,7 +34,7 @@ class Component extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
@@ -90,13 +94,13 @@ class Component extends React.Component {
           <hr />
           <Experience icon={changeLogo} name="Change.org" title="Principal Software Engineer" location="Victoria, BC" date="aug 2014 - may 2016 (1.5 years)">
             <p>I was chosen to lead a small team of engineers in building a new web application
-              called <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016">Change Politics</a>. It was built from
+              called <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a>. It was built from
               the ground up and revered by the company for its stability and the speed by which we were able to add new features. The project was ultimately
               scrapped due to budget constraints but it remains one of the highlights of my career.</p>  
           </Experience>
           <hr />
           <Experience icon={zyngaLogo} name="Zynga" title="Principal Software Engineer" location="San Francisco, CA" date="Jan 2011 - Aug 2014 (3.5 years)">
-            <p>I moved to San Francisco to work at Zynga to help build their new web platform <a href="http://zynga.com">zynga.com</a>.
+            <p>I moved to San Francisco to work at Zynga to help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>.
             I led a feature development team that helped ship the final product. Later I was asked to join a new team that was building a native iOS/Android social
             application.</p>
           </Experience>
@@ -120,10 +124,36 @@ class Component extends React.Component {
             There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
           </p>
           <div>
-            <Project image={epp2dImage} url="https://github.com/aflesher/EntityPostProcessor2D" className="unity" title="Entity Post-Processor 2D">
+            <Project image={wallscImage} className="unity" title="Wall Smart Contract">
             <div className="details">
-              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets. A solution to doing this was to create a multi-camera system that rendered these assets to a render texture. It worked great so I built a tool to help automate the setup process.
+              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets.
+              A solution to doing this was to create a multi-camera system that rendered these assets to a render texture.
+              It worked great so I built a tool to help automate the setup process.
+              <div>
+                <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |
+                <Link to="/wall">Web Demo</Link>
               </div>
+            </div>
+            </Project>
+          </div>
+
+          <h2>
+            Ethereum Smart Contracts
+          </h2>
+          <p>
+            There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
+          </p>
+          <div>
+            <Project image={epp2dImage} className="unity" title="Entity Post-Processor 2D">
+            <div className="details">
+              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets.
+              A solution to doing this was to create a multi-camera system that rendered these assets to a render texture.
+              It worked great so I built a tool to help automate the setup process.
+              <div>
+                <a href="https://github.com/aflesher/EntityPostProcessor2D" target="_blank">Github</a> |
+                <a href="#" target="_blank">Unity Store</a>
+              </div>
+            </div>
             </Project>
           </div>
 
@@ -135,8 +165,12 @@ class Component extends React.Component {
           </p>
           <div>
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
-            <div className="details">
+              <div className="details">
                 I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
+                <div>
+                  <a href="https://github.com/aflesher/shaders/blob/master/outrun-sunset.shader" target="_blank">Github</a> |
+                  <a href="https://www.shadertoy.com/view/Xl2BRh" target="_blank">Shadertoy</a>
+              </div>
               </div>
             </Project>
           </div>

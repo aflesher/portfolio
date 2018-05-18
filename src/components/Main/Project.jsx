@@ -3,7 +3,7 @@ import React from "react";
 class Project extends React.Component {
   render() {
     return (
-      <a className={this.props.className} href={this.props.url}>
+      <div className={this.props.className}>
         <div className="project-inner">
           <div className="title">
             {this.props.title}
@@ -13,7 +13,7 @@ class Project extends React.Component {
           </div>
           {this.props.children}
         </div>
-      </a>
+      </div>
     );
   }
 }
