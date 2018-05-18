@@ -1,14 +1,20 @@
-import Web3 from 'web3';
 import abi from './abi.json';
 import config from './config.json';
 
-var useRopsten = false;
-if (typeof window !== `undefined`) {
-  useRopsten = window.web3 && !config.local;
-}
+var web3, contract;
+var didInit = false;
 
-var web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host),
+function init() {
+  if (didInit) {
+    return;
+  }
+
+  didInit = true;
+  var useRopsten = window.web3 && !config.local;
+  console.log(useRopsten, window.web3, Web3.version);
+  web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host);
   contract = new web3.eth.Contract(abi, useRopsten ? config.ropstenAddress : config.localAddress);
+}
 
 function getAccount() {
   return new Promise((resolve, reject) => {
@@ -92,5 +98,6 @@ module.exports = {
   getAccount,
   listForSale,
   unlistForSale,
-  buyPost
+  buyPost,
+  init
 };

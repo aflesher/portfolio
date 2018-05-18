@@ -2,13 +2,23 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import Paginate from "react-paginate";
-import WallLib from "../library/wall";
 import Post from "../components/Wall/Post.jsx";
 import CreatePost from "../components/Wall/CreatePost.jsx";
 import _ from "lodash";
+import WallLib from "../library/wall";
 
 let fonts = ['Arial', 'Geneva', 'Georgia', 'Impact', 'Tahoma', 'Verdana'];
 let postsPerPage = 10;
+
+// let WallLib = {
+//   getAccount: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   getPosts: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   getPostCount: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   updatePost: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   listForSale: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   unlistForSale: function () { return new Promise(function(resolve, reject) { resolve(); }); },
+//   buyPost: function () { return new Promise(function(resolve, reject) { resolve(); }); }
+// };
 
 class Wall extends React.Component {
   constructor(props) {
@@ -99,9 +109,12 @@ class Wall extends React.Component {
     this.updatePosts(resp.selected);
   }
 
-  componentWillMount() {
-    this.updatePosts(this.state.currentPage);
-    this.getAccount();
+  componentDidMount() {
+    window.addEventListener('load', () => {
+      WallLib.init();
+      this.updatePosts(this.state.currentPage);
+      this.getAccount();
+    });
   }
 
   toggleDescription() {
@@ -129,6 +142,9 @@ class Wall extends React.Component {
 
     return (
       <div>
+        <Helmet>
+          <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+        </Helmet>
         <div className="home-link">
           <Link to="/">{"< back home"}</Link>
         </div>
