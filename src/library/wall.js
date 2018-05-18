@@ -1,9 +1,13 @@
-var Web3 = require("web3"),
-  abi = require('./abi.json'),
-  config = require('./config.json'),
+import Web3 from 'web3';
+import abi from './abi.json';
+import config from './config.json';
 
-  useRopsten = window.web3 && !config.local,
-  web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host),
+var useRopsten = false;
+if (typeof window !== `undefined`) {
+  useRopsten = window.web3 && !config.local;
+}
+
+var web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host),
   contract = new web3.eth.Contract(abi, useRopsten ? config.ropstenAddress : config.localAddress);
 
 function getAccount() {
