@@ -57,7 +57,7 @@ function getPostsCount() {
 
 function listForSale(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.sellPost(index, price).send({from: account, gas: 500000});
+    return contract.methods.sellPost(index, web3.utils.toWei(price, 'ether')).send({from: account, gas: 500000});
   });
 }
 
@@ -69,7 +69,7 @@ function unlistForSale(index) {
 
 function buyPost(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.buyPost(index).send({from: account, gas: 500000, value: price});
+    return contract.methods.buyPost(index).send({from: account, gas: 500000, value: web3.utils.toWei(price, 'ether')});
   });
 }
 
@@ -86,6 +86,7 @@ function getPosts(offset, size) {
   }).then((posts) => {
     for (let i = 0; i < posts.length; i++) {
       posts[i].color = {r: posts[i].red, g: posts[i].green, b: posts[i].blue};
+      posts[i].price = web3.utils.fromWei(posts[i].price, 'ether');
     }
     return Promise.resolve(posts);
   });

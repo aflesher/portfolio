@@ -57,6 +57,7 @@ class Wall extends React.Component {
         color,
         poster: this.state.account,
         price: 0,
+        priceEther: 0,
         index: this.state.postsCount
       });
       this.setState({posts});
@@ -116,7 +117,7 @@ class Wall extends React.Component {
         color={post.color}
         text={post.text}
         index={post.index}
-        font={fonts[post.font]}
+        font={post.font}
         account={this.state.account}
         poster={post.poster}
         fonts={fonts}

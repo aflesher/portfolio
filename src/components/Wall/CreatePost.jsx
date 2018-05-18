@@ -55,7 +55,7 @@ class Component extends React.Component {
     return (
       <div className="wall-create-post">
         <h4>{this.props.title}</h4>
-        <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.props.fonts[this.state.font]} index={this.props.index} />
+        <Post text={this.state.text} color={this.state.color} hideActions="true" font={this.state.font} index={this.props.index} fonts={this.props.fonts} />
         <form>
           <div className="form-group">
             <label>Text</label>
