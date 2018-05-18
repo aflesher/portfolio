@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
-import Helmet from "react-helmet";
+import Script from "react-load-script";
 import Paginate from "react-paginate";
 import Post from "../components/Wall/Post.jsx";
 import CreatePost from "../components/Wall/CreatePost.jsx";
@@ -99,12 +99,11 @@ class Wall extends React.Component {
     this.updatePosts(resp.selected);
   }
 
-  componentDidMount() {
-    window.addEventListener('load', () => {
-      WallLib.init();
-      this.updatePosts(this.state.currentPage);
-      this.getAccount();
-    });
+  handleScriptLoad() {
+    console.log('script load');
+    WallLib.init();
+    this.updatePosts(this.state.currentPage);
+    this.getAccount();
   }
 
   toggleDescription() {
@@ -132,9 +131,10 @@ class Wall extends React.Component {
 
     return (
       <div>
-        <Helmet>
-          <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
-        </Helmet>
+        <Script
+          url="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"
+          onLoad={this.handleScriptLoad.bind(this)}
+        />
         <div className="home-link">
           <Link to="/">{"< back home"}</Link>
         </div>

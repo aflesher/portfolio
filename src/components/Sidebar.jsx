@@ -19,7 +19,7 @@ class Component extends React.Component {
           <div className="nav-items">
             <NavItem name="About Me" active={this.props.activeNavItem} index="0" onClick={(e) => this.navItemOnClick(e)} />
             <NavItem name="Experience" active={this.props.activeNavItem} index="1" onClick={(e) => this.navItemOnClick(e)} />
-            <NavItem name="Open Source Projects" active={this.props.activeNavItem} index="2" onClick={(e) => this.navItemOnClick(e)}  />
+            <NavItem name="Projects" active={this.props.activeNavItem} index="2" onClick={(e) => this.navItemOnClick(e)}  />
             <NavItem name="Resume" active={this.props.activeNavItem} index="3" onClick={(e) => this.navItemOnClick(e)}  />
           </div>
 

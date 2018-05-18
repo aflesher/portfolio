@@ -114,23 +114,22 @@ class Component extends React.Component {
         <div className="projects section" ref="2">
           
           <h1>
-            Open Source Projects
+            Projects
           </h1>
 
           <h2>
-            Unity
+            Ethereum Smart Contracts
           </h2>
           <p>
-            There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
+            Smart Contracts are the future.
           </p>
           <div>
             <Project image={wallscImage} className="unity" title="Wall Smart Contract">
             <div className="details">
-              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets.
-              A solution to doing this was to create a multi-camera system that rendered these assets to a render texture.
-              It worked great so I built a tool to help automate the setup process.
+              This is just a simple project I created to go though the process of deploying a smart contract. It's a smart contract on the ropsten test net that
+              allows users to write limited text to a wall. Users can also buy/sell spots on the wall. 
               <div>
-                <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |
+                <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |&nbsp;
                 <Link to="/wall">Web Demo</Link>
               </div>
             </div>
@@ -138,7 +137,7 @@ class Component extends React.Component {
           </div>
 
           <h2>
-            Ethereum Smart Contracts
+            Unity
           </h2>
           <p>
             There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
@@ -150,7 +149,7 @@ class Component extends React.Component {
               A solution to doing this was to create a multi-camera system that rendered these assets to a render texture.
               It worked great so I built a tool to help automate the setup process.
               <div>
-                <a href="https://github.com/aflesher/EntityPostProcessor2D" target="_blank">Github</a> |
+                <a href="https://github.com/aflesher/EntityPostProcessor2D" target="_blank">Github</a> |&nbsp;
                 <a href="#" target="_blank">Unity Store</a>
               </div>
             </div>
@@ -166,9 +165,9 @@ class Component extends React.Component {
           <div>
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
               <div className="details">
-                I love 80s "Outrun" art style that has become quite popular. This simple shader captures the genre in a hypnotic loop. 
+                I love the 80s "Outrun" art genre that has become quite popular. This simple shader captures the style in a hypnotic loop. 
                 <div>
-                  <a href="https://github.com/aflesher/shaders/blob/master/outrun-sunset.shader" target="_blank">Github</a> |
+                  <a href="https://github.com/aflesher/shaders/blob/master/outrun-sunset.shader" target="_blank">Github</a> |&nbsp;
                   <a href="https://www.shadertoy.com/view/Xl2BRh" target="_blank">Shadertoy</a>
               </div>
               </div>
