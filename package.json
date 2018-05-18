@@ -8,21 +8,17 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "ajv": "^6.5.0",
     "bootstrap": "^4.1.0",
-    "electron": "^2.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sass": "^1.0.26",
-    "got": "^8.3.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "react-color": "^2.14.1",
     "react-helmet": "^5.2.0",
     "react-paginate": "^5.2.3",
-    "scrypt": "^6.0.3",
     "web3": "^1.0.0-beta.34",
     "webpack": "^1.9.11",
     "websocket": "^1.0.26"
