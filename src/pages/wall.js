@@ -10,16 +10,6 @@ import WallLib from "../library/wall";
 let fonts = ['Arial', 'Geneva', 'Georgia', 'Impact', 'Tahoma', 'Verdana'];
 let postsPerPage = 10;
 
-// let WallLib = {
-//   getAccount: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   getPosts: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   getPostCount: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   updatePost: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   listForSale: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   unlistForSale: function () { return new Promise(function(resolve, reject) { resolve(); }); },
-//   buyPost: function () { return new Promise(function(resolve, reject) { resolve(); }); }
-// };
-
 class Wall extends React.Component {
   constructor(props) {
     super(props);

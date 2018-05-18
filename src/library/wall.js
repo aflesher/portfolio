@@ -4,6 +4,9 @@ import config from './config.json';
 var web3, contract;
 var didInit = false;
 
+// Gatsby isn't able to build the web3 npm and it's dependencies. This is hack to get around it.
+// The wall page includes the web3.min.js from the CDN and wait's till the page has loaded
+// before calling init.
 function init() {
   if (didInit) {
     return;
@@ -11,7 +14,6 @@ function init() {
 
   didInit = true;
   var useRopsten = window.web3 && !config.local;
-  console.log(useRopsten, window.web3, Web3.version);
   web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host);
   contract = new web3.eth.Contract(abi, useRopsten ? config.ropstenAddress : config.localAddress);
 }
