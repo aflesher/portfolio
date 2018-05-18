@@ -16,6 +16,7 @@ function init() {
   var useRopsten = window.web3 && !config.local;
   web3 = new Web3(useRopsten ? window.web3.currentProvider : config.host);
   contract = new web3.eth.Contract(abi, useRopsten ? config.ropstenAddress : config.localAddress);
+  console.log(contract);
 }
 
 function getAccount() {
@@ -41,13 +42,13 @@ function getAddresses() {
 
 function createPost(text, font, red, green, blue) {
   return getAccount().then((account) => {
-    return contract.methods.createPost(text, font, red, green, blue).send({from: account, gas: 500000});
+    return contract.methods.createPost(text, font, red, green, blue).send({from: account, gas: 178424});
   });
 }
 
 function updatePost(index, text, font, red, green, blue) {
   return getAccount().then((account) => {
-    return contract.methods.updatePost(index, text, font, red, green, blue).send({from: account, gas: 500000});
+    return contract.methods.updatePost(index, text, font, red, green, blue).send({from: account, gas: 138345});
   });
 }
 
@@ -57,13 +58,13 @@ function getPostsCount() {
 
 function listForSale(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.sellPost(index, web3.utils.toWei(price, 'ether')).send({from: account, gas: 500000});
+    return contract.methods.sellPost(index, web3.utils.toWei(price, 'ether')).send({from: account, gas: 44685});
   });
 }
 
 function unlistForSale(index) {
   return getAccount().then((account) => {
-    return contract.methods.closePostSale(index).send({from: account, gas: 500000});
+    return contract.methods.closePostSale(index).send({from: account, gas: 13765});
   });
 }
 
