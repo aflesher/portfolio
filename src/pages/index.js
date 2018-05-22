@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Sidebar from "../components/Sidebar.jsx";
 import Main from "../components/Main.jsx";
+import Helmet from "react-helmet"
 
 class Index extends React.Component {
   constructor(props) {
@@ -23,6 +24,9 @@ class Index extends React.Component {
   render() {
     return (
       <div className="page">
+        <Helmet>
+          <title>Adam Flesher</title>
+        </Helmet>
         <Sidebar navItemOnClick={(e) => this.navItemOnClick(e)} activeNavItem={this.state.activeNavItem} scrollTriggerIsNav={this.state.scrollTriggerIsNav} />
         <Main activeContentIndex={this.state.activeNavItem} handleScroll={(e) => this.mainHandleScroll(e)} scrollTriggerIsNav={this.state.scrollTriggerIsNav} />
       </div>

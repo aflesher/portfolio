@@ -6,6 +6,9 @@ import Post from "../components/Wall/Post.jsx";
 import CreatePost from "../components/Wall/CreatePost.jsx";
 import _ from "lodash";
 import WallLib from "../library/wall";
+import Helmet from "react-helmet"
+
+import MetaMaskImage from "../images/download-metamask.png";
 
 let fonts = ['Arial', 'Geneva', 'Georgia', 'Impact', 'Tahoma', 'Verdana'];
 let postsPerPage = 10;
@@ -18,7 +21,9 @@ class Wall extends React.Component {
       postsCount: 0,
       currentPage: 0,
       account: '',
-      showDescription: false
+      showDescription: false,
+      showMetaMask: false,
+      errorMsg: ''
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -101,9 +106,22 @@ class Wall extends React.Component {
   }
 
   handleScriptLoad() {
-    WallLib.init();
-    this.updatePosts(this.state.currentPage);
-    this.getAccount();
+    let error = WallLib.init().then(() => {
+      this.updatePosts(this.state.currentPage);
+      this.getAccount();
+    }).catch((err) => {
+      switch (err) {
+        case 1:
+          this.setState({showMetaMask: true});
+          this.setState({errorMsg: 'You need the Meta Mask extension to interact with this page'});
+          break;
+        case 2:
+          this.setState({errorMsg: 'Set your Meta Mask network to Rospten Test Net'});
+          break;
+      }
+    });
+    
+    
   }
 
   toggleDescription() {
@@ -131,6 +149,9 @@ class Wall extends React.Component {
 
     return (
       <div>
+        <Helmet>
+        <title>Wall Smart Contract</title>
+        </Helmet>
         <Script
           url="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"
           onLoad={this.handleScriptLoad.bind(this)}
@@ -139,6 +160,18 @@ class Wall extends React.Component {
           <Link to="/">{"< back home"}</Link>
         </div>
         <div className="wall">
+          {this.state.errorMsg &&
+            <div className="alert alert-danger" role="alert">
+              {this.state.errorMsg}
+            </div>
+          }
+          {this.state.showMetaMask &&
+            <div>
+              <a href="https://metamask.io/" target="_blank">
+                <img src={MetaMaskImage} />
+              </a>
+            </div>
+          } 
           <div className="description-wrapper">
             <button className="btn btn-secondary" type="button" onClick={this.toggleDescription} >
               Description

@@ -11,7 +11,6 @@ class Template extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>Adam Flesher</title>
           <link rel="shortcut icon" href={favicon} type="image/png" />
         </Helmet>
         {children()}
