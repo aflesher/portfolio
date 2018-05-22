@@ -12,7 +12,7 @@ class Link extends React.Component {
           <img src={this.props.icon} />
         </div>
         <div className="url col-10">
-          <a href={this.props.url}>{this.props.text}</a>
+          <a href={this.props.url} target="_blank">{this.props.text}</a>
         </div>
       </div>
     );

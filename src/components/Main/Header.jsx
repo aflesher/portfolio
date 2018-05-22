@@ -5,6 +5,7 @@ import avatar from "../../images/avatar.png";
 import twitterLogo from "../../images/twitter-logo.png";
 import linkedinLogo from "../../images/linkedin-logo.png";
 import mailLogo from "../../images/mail-icon.png";
+import githubLogo from "../../images/github.png";
 
 class Header extends React.Component {
   render() {
@@ -26,6 +27,7 @@ class Header extends React.Component {
           <Link icon={linkedinLogo} text="/in/adamflesher" url="https://www.linkedin.com/in/adamflesher/" />
           <Link icon={mailLogo} text="adam.flesher@gmail.com" url="mailto:adam.flesher@gmail.com" />
           <Link icon={twitterLogo} text="@AdamFlesher" url="https://twitter.com/AdamFlesher" />
+          <Link icon={githubLogo} text="/aflesher" url="https://github.com/aflesher" />
         </div>
       </div>
     );
