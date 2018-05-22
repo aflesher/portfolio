@@ -72,13 +72,13 @@ class Component extends React.Component {
             About Me
           </h1>
           <p>
-            As a developer with over 14 years experience I am a valuable addition to any team as either a lead or an individual contributor. I have a proven track record of delivering high-quality, scalable and stable applications.
+            As a developer with over 14 years experience I am a valuable addition to any team. I have functioned as both a lead and an individual contributor and enjoy both roles. I have a proven track record of delivering high-quality, scalable and stable applications.
           </p>
           <p>
-            I have an extensive background in building web applications. Through this experience I've learned first hand what processes, technologies and even which types of engineers work well and which don't. 
+            The majority of my career has been spent building web applications. Through this experience I've learned first hand which processes, technologies and methodologies work and which don't. 
           </p>
           <p>
-            Game development and cryptocurrencies are what excite me the most these days. I spent a lot of my free time learning and creating in these spaces.
+            Game development and cryptocurrencies have become my real passion. I spend a lot of my free time learning and creating in these spaces.
           </p>
         </div>
 
@@ -87,28 +87,31 @@ class Component extends React.Component {
             Experience
           </h1>
           <Experience icon={dtLogo} name="Dark Territory" title="Owner/Developer" location="Victoria, BC" date="oct 2016 - apr 2018 (1.5 years)">
-            <p>In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D
-              platformer using Unity. Although I was happy with the progress I had made I made a difficult decision to put the
-              game on hold and pursue other interests.</p>
+            <p>
+              In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D platformer in Unity. I learned a lot and made some really good progress but for various reasons I decided to put the game on hold indefinitely. I'm happy for the experience but excited to pursue other interests.
+            </p>
           </Experience>
           <hr />
           <Experience icon={changeLogo} name="Change.org" title="Principal Software Engineer" location="Victoria, BC" date="aug 2014 - may 2016 (1.5 years)">
-            <p>I was chosen to lead a small team of engineers in building a new web application
-              called <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a>. It was built from
-              the ground up and revered by the company for its stability and the speed by which we were able to add new features. The project was ultimately
-              scrapped due to budget constraints but it remains one of the highlights of my career.</p>  
+            <p>
+              During my time at Change.org I was chosen to lead a small team of engineers in building a new web application. <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a> was built from the ground up using React/Node JS. The engineering side of the project was a great success as we were always able to meet all our deadlines while maintaining a stable and scalable application. The project was ultimately scrapped due to budget constraints but I remain proud of the work we did.
+            </p>
           </Experience>
           <hr />
           <Experience icon={zyngaLogo} name="Zynga" title="Principal Software Engineer" location="San Francisco, CA" date="Jan 2011 - Aug 2014 (3.5 years)">
-            <p>I moved to San Francisco to work at Zynga to help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>.
-            I led a feature development team that helped ship the final product. Later I was asked to join a new team that was building a native iOS/Android social
-            application.</p>
+            <p>
+              I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
+            </p>
           </Experience>
           <hr />
           <Experience icon={flockImage} name="Flock" title="Senior Software Engineer" location="Victoria, BC" date="Oct 2009 - Dec 2010 (1.5 years)">
             <p>Flock was web browser built on chrome that had social features for Facebook and Twitter baked into the application.
               I did a lot of work to port the application to OSX as well as building internal pages used by the browser.</p>
           </Experience>
+          <hr />
+          <div>
+          * In addition to this I have another 5 years of experience of software development. The majority of this experience is in web development and mobile applications.
+          </div>
         </div>
 
         <div className="projects section" ref="2">
@@ -121,7 +124,7 @@ class Component extends React.Component {
             Ethereum Smart Contracts
           </h2>
           <p>
-            Smart Contracts are the future.
+            Ethereum smart contracts are the most exciting thing happening in cryptocurrencies right now. I've been learning and experimenting with writing and deploying smart contracts.
           </p>
           <div>
             <Project image={wallscImage} className="unity" title="Wall Smart Contract">
@@ -160,7 +163,7 @@ class Component extends React.Component {
             Shaders
           </h2>
           <p>
-            Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with. Here are a few things I've been working on:
+            Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with.
           </p>
           <div>
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
