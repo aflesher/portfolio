@@ -47,13 +47,13 @@ function getAddresses() {
 
 function createPost(text, font, red, green, blue) {
   return getAccount().then((account) => {
-    return contract.methods.createPost(text, font, red, green, blue).send({from: account, gas: 178424});
+    return contract.methods.createPost(text, font, red, green, blue).send({from: account, gas: 250000});
   });
 }
 
 function updatePost(index, text, font, red, green, blue) {
   return getAccount().then((account) => {
-    return contract.methods.updatePost(index, text, font, red, green, blue).send({from: account, gas: 138345});
+    return contract.methods.updatePost(index, text, font, red, green, blue).send({from: account, gas: 200000});
   });
 }
 
@@ -63,19 +63,19 @@ function getPostsCount() {
 
 function listForSale(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.sellPost(index, web3.utils.toWei(price, 'ether')).send({from: account, gas: 44685});
+    return contract.methods.sellPost(index, web3.utils.toWei(price, 'ether')).send({from: account, gas: 70000});
   });
 }
 
 function unlistForSale(index) {
   return getAccount().then((account) => {
-    return contract.methods.closePostSale(index).send({from: account, gas: 13765});
+    return contract.methods.closePostSale(index).send({from: account, gas: 20000});
   });
 }
 
 function buyPost(index, price) {
   return getAccount().then((account) => {
-    return contract.methods.buyPost(index).send({from: account, gas: 26891, value: web3.utils.toWei(price, 'ether')});
+    return contract.methods.buyPost(index).send({from: account, gas: 40000, value: web3.utils.toWei(price, 'ether')});
   });
 }
 
