@@ -110,7 +110,7 @@ class Component extends React.Component {
           </Experience>
           <hr />
           <div>
-          * In addition to this I have another 5 years of experience of software development. The majority of this experience is in web development and mobile applications.
+          * In addition to this I have another 5 years of experience in software development. The majority of this experience is in web development and mobile applications.
           </div>
         </div>
 
