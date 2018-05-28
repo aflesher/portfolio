@@ -157,7 +157,9 @@ body {
   }
 
   .resume {
-    position: relative;
+    .resume-wrapper {
+      position: relative;
+    }
 
     .google-docs-link {
       position: absolute;

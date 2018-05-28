@@ -17,9 +17,6 @@ import wallscImage from "../images/wallsc.png";
 class Component extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      autoScrollToIndex: -1
-    }
 
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -28,7 +25,6 @@ class Component extends React.Component {
   // changed due to a scroll event we want to ignore
   componentWillUpdate(nextProps, nextState) {
     if (nextProps.activeContentIndex != this.props.activeContentIndex && nextProps.scrollTriggerIsNav) {
-      this.setState({autoScrollToIndex: nextProps.activeContentIndex});
       this.refs[nextProps.activeContentIndex].scrollIntoView({block: 'start', behavior: 'smooth'});
     }
   }
@@ -41,15 +37,8 @@ class Component extends React.Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll(event) {
-    if (this.state.autoScrollToIndex != -1) {
-      var rect = this.refs[this.state.autoScrollToIndex].getBoundingClientRect();
-      if (rect.top == 0) {
-        this.setState({autoScrollToIndex: -1});
-      }
-      return;
-    }
-    
+  handleScroll(event) {    
+    // determines which nav item to be active
     for (var i = 0; i < 4; i++) {
       var rect = this.refs[i].getBoundingClientRect();
       if (rect.top >= 0) {
@@ -100,7 +89,7 @@ class Component extends React.Component {
           <hr />
           <Experience icon={zyngaLogo} name="Zynga" title="Principal Software Engineer" location="San Francisco, CA" date="Jan 2011 - Aug 2014 (3.5 years)">
             <p>
-              I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
+              I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped to ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
             </p>
           </Experience>
           <hr />
@@ -180,7 +169,9 @@ class Component extends React.Component {
         </div>
 
         <div className="resume section" ref="3">
-          <Resume />
+          <div className="resume-wrapper">
+            <Resume />
+          </div>
         </div>
 
       </div>
