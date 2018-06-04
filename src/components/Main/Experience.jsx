@@ -1,6 +1,18 @@
 import React from "react";
 
 class Experience extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDetailsClick = this.handleDetailsClick.bind(this);
+  }
+
+  handleDetailsClick() {
+    if (this.props.handleDetailsClick) {
+      this.props.handleDetailsClick(this.props.detailsIndex);
+    }
+  }
+
   render() {
     return (
       <div>
@@ -18,7 +30,7 @@ class Experience extends React.Component {
             {this.props.date}
           </div>
           <div className="details">
-            <a href={this.props.detailsLink}>details/duties</a>
+            <div className="link" onClick={this.handleDetailsClick}>details/duties</div>
           </div>
         </div>
         <div>

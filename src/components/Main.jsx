@@ -19,6 +19,7 @@ class Component extends React.Component {
     super(props);
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleExperienceDetailsClick = this.handleExperienceDetailsClick.bind(this);
   }
 
   // a problem is this that this shouldn't always mean scroll. if the activeContentIndex state is
@@ -48,6 +49,10 @@ class Component extends React.Component {
         break;
       }
     }
+  }
+
+  handleExperienceDetailsClick(index) {
+    this.resume.scrollToCompany(index);
   }
 
   render() {
@@ -81,7 +86,8 @@ class Component extends React.Component {
             title="Owner/Developer"
             location="Victoria, BC"
             date="oct 2016 - apr 2018 (1.5 years)"
-            detailsLink="#experience-dark-territory"
+            handleDetailsClick={this.handleExperienceDetailsClick}
+            detailsIndex={0}
           >
             <p>
               In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D platformer in Unity. I learned a lot and made some really good progress but for various reasons I decided to put the game on hold indefinitely. I'm happy for the experience but excited to pursue other interests.
@@ -94,7 +100,8 @@ class Component extends React.Component {
             title="Principal Software Engineer"
             location="Victoria, BC"
             date="aug 2014 - may 2016 (1.5 years)"
-            detailsLink="#experience-change.org"
+            handleDetailsClick={this.handleExperienceDetailsClick}
+            detailsIndex={1}
           >
             <p>
               During my time at Change.org I was chosen to lead a small team of engineers in building a new web application. <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a> was built from the ground up using React/Node JS. The engineering side of the project was a great success as we were always able to meet all our deadlines while maintaining a stable and scalable application. The project was ultimately scrapped due to budget constraints but I remain proud of the work we did.
@@ -107,7 +114,8 @@ class Component extends React.Component {
             title="Principal Software Engineer"
             location="San Francisco, CA"
             date="Jan 2011 - Aug 2014 (3.5 years)"
-            detailsLink="#experience-zynga"
+            handleDetailsClick={this.handleExperienceDetailsClick}
+            detailsIndex={2}
           >
             <p>
               I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped to ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
@@ -120,7 +128,8 @@ class Component extends React.Component {
             title="Senior Software Engineer"
             location="Victoria, BC"
             date="Oct 2009 - Dec 2010 (1.5 years)"
-            detailsLink="#experience-flock"
+            handleDetailsClick={this.handleExperienceDetailsClick}
+            detailsIndex={3}
           >
             <p>Flock was web browser built on chrome that had social features for Facebook and Twitter baked into the application.
               I did a lot of work to port the application to OSX as well as building internal pages used by the browser.</p>
@@ -198,7 +207,7 @@ class Component extends React.Component {
 
         <div className="resume section" ref="3">
           <div className="resume-wrapper">
-            <Resume />
+            <Resume onRef={ref => (this.resume = ref)} />
           </div>
         </div>
 

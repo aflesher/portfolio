@@ -1,6 +1,20 @@
 import React from "react";
 
 class Resume extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.scrollToCompany = this.scrollToCompany.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.onRef(this)
+  }
+
+  scrollToCompany(index) {
+    this.refs[index].scrollIntoView({block: 'start', behavior: 'smooth'});
+  }
+
   render() {
     return (
       <div>
@@ -27,7 +41,7 @@ class Resume extends React.Component {
           Experience
         </div>
         <div>
-          <div className="resume-company" id="experience-dark-territory">
+          <div className="resume-company" ref="0">
             <b>Dark Territory, Victoria BC</b><i> - Owner/Developer</i>
           </div>
           <div className="resume-dates">OCT 2016 - APR 2018</div>
@@ -39,7 +53,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" id="experience-change.org">
+          <div className="resume-company" ref="1">
             <b>Change.org, Victoria BC</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">AUG 2014 - MAY 2016</div>
@@ -53,7 +67,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" id="experience-zynga">
+          <div className="resume-company" ref="2">
             <b>Zynga, San Francisco CA</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">JAN 2011 - AUG 2014</div>
@@ -67,7 +81,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" id="experience-flock">
+          <div className="resume-company" ref="3">
             <b>Flock, Victoria BC</b><i> - Senior Software Engineer</i>
           </div>
           <div className="resume-dates">OCT 2009 - DEC 2010</div>

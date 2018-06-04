@@ -93,9 +93,10 @@ body {
     padding-top: 10px;
   }
 
-  a {
+  a, .link {
     text-decoration: underline;
     color: #4c7184;
+    cursor: pointer;
   }
 
   .section {
