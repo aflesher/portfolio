@@ -27,7 +27,7 @@ class Resume extends React.Component {
           Experience
         </div>
         <div>
-          <div className="resume-company">
+          <div className="resume-company" id="experience-dark-territory">
             <b>Dark Territory, Victoria BC</b><i> - Owner/Developer</i>
           </div>
           <div className="resume-dates">OCT 2016 - APR 2018</div>
@@ -39,7 +39,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company">
+          <div className="resume-company" id="experience-change.org">
             <b>Change.org, Victoria BC</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">AUG 2014 - MAY 2016</div>
@@ -53,7 +53,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company">
+          <div className="resume-company" id="experience-zynga">
             <b>Zynga, San Francisco CA</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">JAN 2011 - AUG 2014</div>
@@ -67,7 +67,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company">
+          <div className="resume-company" id="experience-flock">
             <b>Flock, Victoria BC</b><i> - Senior Software Engineer</i>
           </div>
           <div className="resume-dates">OCT 2009 - DEC 2010</div>

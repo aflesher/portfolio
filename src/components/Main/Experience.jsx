@@ -17,6 +17,9 @@ class Experience extends React.Component {
           <div className="date">
             {this.props.date}
           </div>
+          <div className="details">
+            <a href={this.props.detailsLink}>details/duties</a>
+          </div>
         </div>
         <div>
           {this.props.children}

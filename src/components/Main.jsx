@@ -75,25 +75,53 @@ class Component extends React.Component {
           <h1>
             Experience
           </h1>
-          <Experience icon={dtLogo} name="Dark Territory" title="Owner/Developer" location="Victoria, BC" date="oct 2016 - apr 2018 (1.5 years)">
+          <Experience
+            icon={dtLogo}
+            name="Dark Territory"
+            title="Owner/Developer"
+            location="Victoria, BC"
+            date="oct 2016 - apr 2018 (1.5 years)"
+            detailsLink="#experience-dark-territory"
+          >
             <p>
               In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D platformer in Unity. I learned a lot and made some really good progress but for various reasons I decided to put the game on hold indefinitely. I'm happy for the experience but excited to pursue other interests.
             </p>
           </Experience>
           <hr />
-          <Experience icon={changeLogo} name="Change.org" title="Principal Software Engineer" location="Victoria, BC" date="aug 2014 - may 2016 (1.5 years)">
+          <Experience
+            icon={changeLogo}
+            name="Change.org"
+            title="Principal Software Engineer"
+            location="Victoria, BC"
+            date="aug 2014 - may 2016 (1.5 years)"
+            detailsLink="#experience-change.org"
+          >
             <p>
               During my time at Change.org I was chosen to lead a small team of engineers in building a new web application. <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a> was built from the ground up using React/Node JS. The engineering side of the project was a great success as we were always able to meet all our deadlines while maintaining a stable and scalable application. The project was ultimately scrapped due to budget constraints but I remain proud of the work we did.
             </p>
           </Experience>
           <hr />
-          <Experience icon={zyngaLogo} name="Zynga" title="Principal Software Engineer" location="San Francisco, CA" date="Jan 2011 - Aug 2014 (3.5 years)">
+          <Experience
+            icon={zyngaLogo}
+            name="Zynga"
+            title="Principal Software Engineer"
+            location="San Francisco, CA"
+            date="Jan 2011 - Aug 2014 (3.5 years)"
+            detailsLink="#experience-zynga"
+          >
             <p>
               I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped to ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
             </p>
           </Experience>
           <hr />
-          <Experience icon={flockImage} name="Flock" title="Senior Software Engineer" location="Victoria, BC" date="Oct 2009 - Dec 2010 (1.5 years)">
+          <Experience
+            icon={flockImage}
+            name="Flock"
+            title="Senior Software Engineer"
+            location="Victoria, BC"
+            date="Oct 2009 - Dec 2010 (1.5 years)"
+            detailsLink="#experience-flock"
+          >
             <p>Flock was web browser built on chrome that had social features for Facebook and Twitter baked into the application.
               I did a lot of work to port the application to OSX as well as building internal pages used by the browser.</p>
           </Experience>
@@ -142,7 +170,7 @@ class Component extends React.Component {
               It worked great so I built a tool to help automate the setup process.
               <div>
                 <a href="https://github.com/aflesher/EntityPostProcessor2D" target="_blank">Github</a> |&nbsp;
-                <a href="#" target="_blank">Unity Store</a>
+                <a href="https://drive.google.com/open?id=1-eA-qDG59Q6EsTLXh0prcmobsTHtuyp5" target="_blank">Unity Package</a>
               </div>
             </div>
             </Project>
