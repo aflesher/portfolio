@@ -159,7 +159,7 @@ class Component extends React.Component {
               allows users to write limited text to a wall. Users can also buy/sell spots on the wall. 
               <div>
                 <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |&nbsp;
-                <Link to="/wall">Web Demo</Link>
+                <a href="https://wall-smart-contract.netlify.com">Web Demo</a>
               </div>
             </div>
             </Project>
