@@ -18,7 +18,7 @@ class Resume extends React.Component {
   render() {
     return (
       <div>
-        <div className="google-docs-link">
+        <div className="google-docs-link hidden-sm-down">
           <a href="https://drive.google.com/open?id=1eFLlwcZDcNUwEJ22zEKPnmMh5NrU80FZgJtywfC-VBo" target="_blank">Google Docs Version</a>
         </div>
         <div className="resume-name">

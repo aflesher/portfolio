@@ -2,7 +2,6 @@
 @import 'variables.scss';
 @import 'sidebar.scss';
 @import 'header.scss';
-@import 'wall.scss';
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -160,6 +159,12 @@ body {
 
     hr {
       margin: 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .google-docs-link {
+      display: none;
     }
   }
 
