@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "../Sidebar/Link.jsx";
 
-import avatar from "../../images/avatar.png";
+import avatar from "../../images/avatar.jpg";
 import twitterLogo from "../../images/twitter-logo.png";
 import linkedinLogo from "../../images/linkedin-logo.png";
 import mailLogo from "../../images/mail-icon.png";
