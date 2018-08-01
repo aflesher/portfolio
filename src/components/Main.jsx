@@ -174,7 +174,7 @@ class Component extends React.Component {
           <div>
             <Project image={epp2dImage} className="unity" title="Entity Post-Processor 2D">
             <div className="details">
-              One issue I had when developing my game in Unity is that I wanted to be add effects like outlines and dissolves to our Spine 2D assets.
+              One issue I had when developing my game in Unity is that I wanted to add effects like outlines and dissolves to our Spine 2D assets.
               A solution to doing this was to create a multi-camera system that rendered these assets to a render texture.
               It worked great so I built a tool to help automate the setup process.
               <div>
