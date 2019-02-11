@@ -13,6 +13,8 @@ import odysseyImage from "../images/odyssey.png";
 import epp2dImage from "../images/epp2d.jpg";
 import flockImage from "../images/flock-icon.png";
 import wallscImage from "../images/wallsc.png";
+import semaphoreLogo from "../images/semaphore.jpg";
+import dollarJockeyImage from "../images/dollar-jockey.png";
 
 class Component extends React.Component {
   constructor(props) {
@@ -66,7 +68,7 @@ class Component extends React.Component {
             About Me
           </h1>
           <p>
-            As a developer with over 14 years experience I am a valuable addition to any team. I have functioned as both a lead and an individual contributor and enjoy both roles. I have a proven track record of delivering high-quality, scalable and stable applications.
+            As a developer with over 15 years experience I am a valuable addition to any team. I have functioned as both a lead and an individual contributor and enjoy both roles. I have a proven track record of delivering high-quality, scalable and stable applications.
           </p>
           <p>
             The majority of my career has been spent building web applications. Through this experience I've learned first hand which processes, technologies and methodologies work and which don't. 
@@ -81,13 +83,26 @@ class Component extends React.Component {
             Experience
           </h1>
           <Experience
+            icon={semaphoreLogo}
+            name="Semaphore Solutions"
+            title="Contractor/Software Engineer"
+            location="Victoria, BC"
+            date="aug 2018 - present"
+            handleDetailsClick={this.handleExperienceDetailsClick}
+            detailsIndex={0}
+          >
+            <p>
+            At Semaphore Solutions I work on management software for retirement communities for a client of theirs. I balance my full stack development duties with managing a small team of engineers. I've helped moved the team forward with new features while reducing the enormous amount of tech debt in the product.
+            </p>
+          </Experience>
+          <Experience
             icon={dtLogo}
             name="Dark Territory"
             title="Owner/Developer"
             location="Victoria, BC"
             date="oct 2016 - apr 2018 (1.5 years)"
             handleDetailsClick={this.handleExperienceDetailsClick}
-            detailsIndex={0}
+            detailsIndex={1}
           >
             <p>
               In 2016 I left my job to fulfill a lifelong dream of starting an independent game studio. I set out to build a procedurally generated 2D platformer in Unity. I learned a lot and made some really good progress but for various reasons I decided to put the game on hold indefinitely. I'm happy for the experience but excited to pursue other interests.
@@ -101,7 +116,7 @@ class Component extends React.Component {
             location="Victoria, BC"
             date="aug 2014 - may 2016 (1.5 years)"
             handleDetailsClick={this.handleExperienceDetailsClick}
-            detailsIndex={1}
+            detailsIndex={2}
           >
             <p>
               During my time at Change.org I was chosen to lead a small team of engineers in building a new web application. <a href="http://www.wired.co.uk/article/change-org-change-politics-united-states-presidential-election-2016" target="_blank">Change Politics</a> was built from the ground up using React/Node JS. The engineering side of the project was a great success as we were always able to meet all our deadlines while maintaining a stable and scalable application. The project was ultimately scrapped due to budget constraints but I remain proud of the work we did.
@@ -115,7 +130,7 @@ class Component extends React.Component {
             location="San Francisco, CA"
             date="Jan 2011 - Aug 2014 (3.5 years)"
             handleDetailsClick={this.handleExperienceDetailsClick}
-            detailsIndex={2}
+            detailsIndex={3}
           >
             <p>
               I moved to San Francisco to work at Zynga and help build their new web platform <a href="http://zynga.com" target="_blank">zynga.com</a>. I led a feature development team that helped to ship the final product. Later I joined a team building a native iOS/Android social application as a lead engineer.
@@ -129,7 +144,7 @@ class Component extends React.Component {
             location="Victoria, BC"
             date="Oct 2009 - Dec 2010 (1.5 years)"
             handleDetailsClick={this.handleExperienceDetailsClick}
-            detailsIndex={3}
+            detailsIndex={4}
           >
             <p>Flock was web browser built on chrome that had social features for Facebook and Twitter baked into the application.
               I did a lot of work to port the application to OSX as well as building internal pages used by the browser.</p>
@@ -152,6 +167,19 @@ class Component extends React.Component {
           <p>
             Ethereum smart contracts are the most exciting thing happening in cryptocurrencies right now. I've been learning and experimenting with writing and deploying smart contracts.
           </p>
+          <div>
+            <Project image={dollarJockeyImage} className="unity" title="http://dollarjockey.cash">
+            <div className="details">
+              I created this site as a financial blog but it's primary purpose is to track my stock trade activity. Each trade is manually written to an Ethereum
+              smart contract after it's executed. This keeps a public and immutable record of all my trades. 
+              <div>
+                <a href="https://github.com/aflesher/stock-portfolio-contract" target="_blank">Github (smart contract)</a> |&nbsp;
+                <a href="https://github.com/aflesher/stock-portfolio-web" target="_blank">Github (website)</a> |&nbsp;
+                <a href="https://dollarjockey.cash/">Live Site</a>
+              </div>
+            </div>
+            </Project>
+          </div>
           <div>
             <Project image={wallscImage} className="unity" title="Wall Smart Contract">
             <div className="details">

@@ -35,13 +35,24 @@ class Resume extends React.Component {
           Technical Proficiencies
         </div>
         <div>
-          Unity C#, ShaderLab, Etheruem Solidity, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins
+          Unity C#, ShaderLab, Etheruem Solidity, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins, AngularJS, SQL Server
         </div>
         <div className="resume-heading">
           Experience
         </div>
         <div>
           <div className="resume-company" ref="0">
+            <b>Semaphore Solutions, Victoria BC</b><i> - Contractor/Software Engineer</i>
+          </div>
+          <div className="resume-dates">AUG 2018 - PRESENT</div>
+          <ul>
+            <li>Team led and full stack engineer for existing AngularJS/C# .net medical services web application.</li>
+            <li>Responsible for running scrum, ensuring team meets weekly deadlines and coordinating with other internal development teams.</li>
+            <li>Have taken the initiative to improve and clean up the existing codebase by establishing proper development standards and upgrading outdated libraries.</li>
+          </ul>
+        </div>
+        <div>
+          <div className="resume-company" ref="1">
             <b>Dark Territory, Victoria BC</b><i> - Owner/Developer</i>
           </div>
           <div className="resume-dates">OCT 2016 - APR 2018</div>
@@ -53,7 +64,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" ref="1">
+          <div className="resume-company" ref="2">
             <b>Change.org, Victoria BC</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">AUG 2014 - MAY 2016</div>
@@ -67,7 +78,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" ref="2">
+          <div className="resume-company" ref="3">
             <b>Zynga, San Francisco CA</b><i> - Principal Software Engineer</i>
           </div>
           <div className="resume-dates">JAN 2011 - AUG 2014</div>
@@ -81,7 +92,7 @@ class Resume extends React.Component {
           </ul>
         </div>
         <div>
-          <div className="resume-company" ref="3">
+          <div className="resume-company" ref="4">
             <b>Flock, Victoria BC</b><i> - Senior Software Engineer</i>
           </div>
           <div className="resume-dates">OCT 2009 - DEC 2010</div>
