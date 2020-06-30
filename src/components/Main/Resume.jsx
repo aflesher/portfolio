@@ -35,7 +35,7 @@ class Resume extends React.Component {
           Technical Proficiencies
         </div>
         <div>
-          Unity C#, ShaderLab, Etheruem Solidity, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins, AngularJS, SQL Server
+        Electron, Typescript, Unity C#, ShaderLab, Ethereum Solidity, Node.js, CSS/SCSS, React, Lodash, jQuery, Mochajs, Rendr, Postgres, MySQL, Ruby on Rails, Objective-C, Java, PHP, Jira, Git, Python, Jenkins, AngularJS, SQL Server, Java Play
         </div>
         <div className="resume-heading">
           Experience
@@ -47,7 +47,7 @@ class Resume extends React.Component {
           <div className="resume-dates">AUG 2018 - PRESENT</div>
           <ul>
             <li>Team led and full stack engineer for existing AngularJS/C# .net medical services web application.</li>
-            <li>Responsible for running scrum, ensuring team meets weekly deadlines and coordinating with other internal development teams.</li>
+            <li>Responsible for running scrum, ensuring my team meets weekly deadlines and coordinating with other internal development teams.</li>
             <li>Have taken the initiative to improve and clean up the existing codebase by establishing proper development standards and upgrading outdated libraries.</li>
           </ul>
         </div>

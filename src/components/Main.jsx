@@ -73,9 +73,6 @@ class Component extends React.Component {
           <p>
             The majority of my career has been spent building web applications. Through this experience I've learned first hand which processes, technologies and methodologies work and which don't. 
           </p>
-          <p>
-            Game development and cryptocurrencies have become my real passion. I spend a lot of my free time learning and creating in these spaces.
-          </p>
         </div>
 
         <div className="experience section" ref="1">
@@ -158,47 +155,21 @@ class Component extends React.Component {
         <div className="projects section" ref="2">
           
           <h1>
-            Projects
+            Personal Projects
           </h1>
 
-          <h2>
-            Ethereum Smart Contracts
-          </h2>
-          <p>
-            Ethereum smart contracts are the most exciting thing happening in cryptocurrencies right now. I've been learning and experimenting with writing and deploying smart contracts.
-          </p>
           <div>
-            <Project image={dollarJockeyImage} className="unity" title="http://dollarjockey.cash">
+            <Project image={dollarJockeyImage} className="unity" title="Investment Portfolio">
             <div className="details">
-              I created this site as a financial blog but it's primary purpose is to track my stock trade activity. Each trade is manually written to an Ethereum
-              smart contract after it's executed. This keeps a public and immutable record of all my trades. 
+            I created this site to help assess and keep track of all my investments. It's become an invaluable tool over the years to
+            help me become a better investor. I always enjoy refining and adding new features to it.
               <div>
-                <a href="https://github.com/aflesher/stock-portfolio-contract" target="_blank">Github (smart contract)</a> |&nbsp;
-                <a href="https://github.com/aflesher/stock-portfolio-web" target="_blank">Github (website)</a> |&nbsp;
-                <a href="https://dollarjockey.cash/">Live Site</a>
-              </div>
-            </div>
-            </Project>
-          </div>
-          <div>
-            <Project image={wallscImage} className="unity" title="Wall Smart Contract">
-            <div className="details">
-              This is just a simple project I created to go though the process of deploying a smart contract. It's a smart contract on the ropsten test net that
-              allows users to write limited text to a wall. Users can also buy/sell spots on the wall. 
-              <div>
-                <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |&nbsp;
-                <a href="https://wall-smart-contract.netlify.com">Web Demo</a>
+                <a href="https://github.com/aflesher/investment-portfolio" target="_blank">Github</a>
               </div>
             </div>
             </Project>
           </div>
 
-          <h2>
-            Unity
-          </h2>
-          <p>
-            There is so many amazing free guides and resources for Unity. Lately I've been trying to use some of my experience to give something back.
-          </p>
           <div>
             <Project image={epp2dImage} className="unity" title="Entity Post-Processor 2D">
             <div className="details">
@@ -213,12 +184,19 @@ class Component extends React.Component {
             </Project>
           </div>
 
-          <h2>
-            Shaders
-          </h2>
-          <p>
-            Using math to create art fascinates me. I'm always playing around on shadertoy.com seeing what I can come up with.
-          </p>
+          <div>
+            <Project image={wallscImage} className="unity" title="Wall Smart Contract">
+            <div className="details">
+              This is just a simple project I created to go though the process of deploying a smart contract. It's a smart contract on the ropsten test net that
+              allows users to write limited text to a wall. Users can also buy/sell spots on the wall. 
+              <div>
+                <a href="https://github.com/aflesher/Wall" target="_blank">Github</a> |&nbsp;
+                <a href="https://wall-smart-contract.netlify.com">Web Demo</a>
+              </div>
+            </div>
+            </Project>
+          </div>
+
           <div>
             <Project image={outrunImage} url="https://www.shadertoy.com/view/Xl2BRh" className="shader" title="Outrun Shader">
               <div className="details">
