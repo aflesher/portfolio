@@ -3,13 +3,11 @@ import Experience from "./Main/Experience.jsx";
 import Project from "./Main/Project.jsx";
 import Resume from "./Main/Resume.jsx";
 import Header from "./Main/Header.jsx";
-import Link from "gatsby-link";
 
 import changeLogo from "../images/change.png";
 import zyngaLogo from "../images/zynga.png";
 import dtLogo from "../images/logo-dt.png";
 import outrunImage from "../images/outrun.png";
-import odysseyImage from "../images/odyssey.png";
 import epp2dImage from "../images/epp2d.jpg";
 import flockImage from "../images/flock-icon.png";
 import wallscImage from "../images/wallsc.png";

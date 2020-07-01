@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "gatsby-link";
 import Sidebar from "../components/Sidebar.jsx";
 import Main from "../components/Main.jsx";
 import Helmet from "react-helmet"
